@@ -29,6 +29,11 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 @media(max-width:420px){header{gap:8px}.brand{gap:8px}header h1{font-size:24px}#theme-toggle{font-size:12px;padding:10px}.menu-toggle .menu-label{display:none}.menu-icon{margin:0}.rudiment-tools{padding:12px}.rudiment-actions{width:100%}.rudiment-actions>*{flex:1}.section-heading h2{font-size:26px}}
 @media(max-width:700px){h1{font-size:26px}header{margin-bottom:18px}.controls{grid-template-columns:1fr;padding:18px;gap:18px}.field{display:grid;grid-template-columns:1fr 95px;align-items:center;gap:5px 12px}.field label{margin:0}.field small{grid-column:1/-1;margin:0;max-width:none}.duration-options{grid-template-columns:repeat(3,minmax(0,1fr))}.generate-area{display:block}.primary{width:100%}.generate-area small{margin-top:9px}.sheet-header{padding:18px}.score{padding:12px 12px 5px}.sheet-footer{padding:12px 18px;gap:7px 16px}.sheet-title{font-size:24px}}
 @media(max-width:400px){.duration-options{gap:8px}.duration-choice{padding:10px 7px}.duration-name{font-size:11px}.choice{font-size:12px;gap:5px}}
+
+.sound-panel{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:18px}.sound-demo{background:var(--panel);border-color:var(--panel-line)}.sound-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}.sound-panel h3{font-size:17px;margin:0 0 6px}.sound-panel-heading p,.sound-note{font-size:12px;line-height:1.6;color:var(--muted);margin:0}.sound-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.sound-option{display:flex;align-items:center;gap:9px;background:var(--choice);border:1px solid var(--panel-line);border-radius:8px;min-height:52px;padding:12px 10px;margin:0;font-size:12px;cursor:pointer}.sound-option:has(input:checked){border-color:var(--green);background:var(--hover)}.sound-option input{accent-color:var(--green);margin:0;width:17px;height:17px;flex-shrink:0}.kit-sounds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.kit-sound{padding:14px;background:var(--choice);border:1px solid var(--panel-line);border-radius:10px}.kit-sound-controls{display:flex;gap:8px}.kit-sound select{min-width:0;flex:1;width:100%;padding:10px;border:1px solid var(--input-line);border-radius:7px;background:var(--input);color:var(--text);font:inherit;font-size:13px;min-height:44px}.kit-sound select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.kit-sound button{flex-shrink:0;min-width:44px}.sound-note{margin-top:18px}.demo-transport{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.demo-transport .volume-control{margin-left:auto}.demo-transport button[aria-pressed=true],.kit-sound button[aria-pressed=true]{outline:2px solid var(--green);outline-offset:2px}.demo-progress{display:flex;align-items:center;gap:12px;min-height:34px;margin:10px 0 3px;font-size:12px;color:var(--green);font-variant-numeric:tabular-nums}.demo-beats{display:flex;gap:7px}.demo-beats span{display:block;width:9px;height:9px;border-radius:50%;background:var(--input-line)}.demo-beats span.active{background:var(--green);box-shadow:0 0 0 3px var(--hover)}.sound-settings-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}.sound-settings-footer .status{margin:0}
+@media(max-width:1100px){.sound-options{grid-template-columns:repeat(2,minmax(0,1fr))}.demo-transport .volume-control{margin-left:0}}
+@media(max-width:700px){.sound-panel{padding:18px}.sound-panel-heading{align-items:flex-start;flex-direction:column}.kit-sounds{grid-template-columns:1fr}.demo-transport button{flex:1 1 42%}.demo-transport .volume-control{width:100%;margin-top:8px}.demo-transport .volume-control input{flex:1}.sound-option{font-size:12px;padding:10px 7px}}
+
 @media print{@page{size:A4;margin:12mm}:root{--text:#242821;--muted:#697064;--surface:#fff;--foot:#fff;--line:#dedfd5;--green:#354d3f;--badge:#f1e5bf;--badge-text:#6e572b}body{background:white;color:#242821}.app{padding:0;max-width:none}.app-layout{display:block}.sidebar,.menu-dialog,.rudiment-tools,header,.controls,.player,.actions,.status,.help,footer,.pagination{display:none}.sheet{border:0;border-radius:0}.sheet-header{padding:0 0 15px}.score{padding:10px 0}.score-line{break-inside:avoid;overflow:visible;margin:5px 0 14px}.score-line svg{width:100%;min-width:0!important}.playback-bar{opacity:0!important}.active-event{color:#242821}.rudiment-image-wrap{overflow:visible}.rudiment-image-wrap.is-zoomed img{width:100%}}
 </style>
 </head>
@@ -47,6 +52,7 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 <a href="#paradiddles/triple" data-section="paradiddles/triple">Тройной парадидл</a>
 <a href="#paradiddles/paradiddle-diddle" data-section="paradiddles/paradiddle-diddle">Парадидл-дидл</a>
 </div></details>
+<div class="nav-group"><a href="#sounds" id="nav-sounds" data-section="sounds"><span class="nav-symbol" aria-hidden="true">♪</span>Звуки</a></div>
 </nav>
 </aside>
 <main id="main-content">
@@ -78,6 +84,17 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 <div class="generate-area"><button class="primary" type="submit">Сгенерировать акценты ↗</button><small>Все позиции — ноты. Знак &gt; сверху — акцент.</small></div>
 <p class="error" id="accent-error" role="alert" hidden></p>
 </form>
+</section>
+<section id="panel-sounds" aria-labelledby="sounds-title" hidden>
+<div class="section-heading"><div class="eyebrow">Твоя палитра</div><h2 id="sounds-title">Звуки</h2><p>Выбери тембры и сравни их на коротком ритме. Метроном и малый барабан используются также в этюдах и акцентах.</p></div>
+<div class="sound-demo sound-panel">
+<div class="sound-panel-heading"><div><h3>Послушать вместе</h3><p>Четыре такта 4/4: грув, акценты и переход по томам.</p></div><div class="tempo-control"><label for="demo-tempo">Темп</label><input id="demo-tempo" type="number" min="40" max="240" step="1" value="100" required inputmode="numeric"><span>BPM</span></div></div>
+<div class="demo-transport"><button type="button" data-demo="metronome">▶ Метроном</button><button type="button" data-demo="kit">▶ Установка</button><button class="play-button" type="button" data-demo="together">▶ Вместе</button><button id="demo-stop" type="button" disabled>■ Стоп</button><label class="volume-control" for="demo-volume">Громкость<input id="demo-volume" type="range" min="0" max="100" value="60"></label></div>
+<div class="demo-progress"><div class="demo-beats" aria-hidden="true"><span></span><span></span><span></span><span></span></div><span id="demo-position"></span></div><p id="demo-status" class="player-status" role="status">Нажми на вариант демо или послушай отдельный инструмент ниже.</p>
+</div>
+<div class="sound-panel"><div class="sound-panel-heading"><div><h3>Метроном</h3><p>Первая доля звучит выше, чтобы было легче слышать начало такта.</p></div></div><fieldset id="metronome-sounds" class="sound-options" aria-label="Тембр метронома"></fieldset></div>
+<div class="sound-panel"><div class="sound-panel-heading"><div><h3>Барабанная установка</h3><p>У малого барабана для сравнения прозвучат тихий удар и акцент.</p></div></div><div id="kit-sounds" class="kit-sounds"></div><p class="sound-note">Бочка, хай-хэт, томы и тарелки звучат в демо установки. Все тембры в этой коллекции синтезированы.</p></div>
+<div class="sound-settings-footer"><p class="status" id="sound-settings-status" role="status">Выбор сохраняется на этом устройстве.</p><button id="reset-sounds" type="button">Вернуть исходные звуки</button></div>
 </section>
 <section id="panel-paradiddles" aria-labelledby="rudiment-title" hidden>
 <div class="section-heading"><div class="eyebrow">Парадидлы · практика рук</div><h2 id="rudiment-title">Парадидл</h2><p>Полный цикл смещений. Проходи строки по порядку, сохраняя ровную пульсацию и выделяя акценты.</p></div>
@@ -415,32 +432,119 @@ function makePlaybackPlan(etude,bpm,metronome=false) {
   sounds.sort((a,b)=>a.at-b.at);
   return {sounds,positions,duration:etude.bars*beats*60/bpm,bars:etude.bars,loop:true};
 }
-function makeSoundBuffer(context,kind) {
-  const isDrum=kind==='drum'||kind==='softDrum';
-  const duration=isDrum?0.11:0.035;
+const METRONOME_SOUNDS=[['beep','Электронный'],['wood','Деревянный'],['tick','Щелчок'],['bell','Колокольчик']];
+const KIT_SOUNDS={
+  kick:{name:'Бочка',options:[['dry','Собранная'],['deep','Глубокая'],['electronic','Электронная']]},
+  snare:{name:'Малый барабан',options:[['pad','Пэд · как раньше'],['dry','Сухой'],['deep','Низкий'],['electronic','Электронный']]},
+  hat:{name:'Закрытый хай-хэт',options:[['dry','Короткий'],['deep','Мягкий'],['electronic','Электронный']]},
+  openHat:{name:'Открытый хай-хэт',options:[['dry','Чёткий'],['deep','Мягкий'],['electronic','Электронный']]},
+  tomHigh:{name:'Высокий том',options:[['dry','Собранный'],['deep','Тёплый'],['electronic','Электронный']]},
+  tomLow:{name:'Низкий том',options:[['dry','Собранный'],['deep','Глубокий'],['electronic','Электронный']]},
+  ride:{name:'Райд',options:[['dry','Яркий'],['deep','Тёмный'],['electronic','Электронный']]},
+  crash:{name:'Крэш',options:[['dry','Короткий'],['deep','Широкий'],['electronic','Электронный']]}
+};
+function normalizeSoundSettings(value) {
+  const valid=(options,id)=>options.some(option=>option[0]===id)?id:options[0][0];
+  return {metronome:valid(METRONOME_SOUNDS,value?.metronome),kit:Object.fromEntries(Object.entries(KIT_SOUNDS).map(([id,item])=>[id,valid(item.options,value?.kit?.[id])]))};
+}
+function makeSoundBuffer(context,kind,variant) {
+  const voice=kind==='drum'||kind==='softDrum'?'snare':kind;
+  variant=variant||(voice==='snare'?'pad':'dry');
+  const metro=kind==='click'||kind==='accent',strong=kind==='accent';
+  if(metro&&!METRONOME_SOUNDS.some(([id])=>id===variant))variant='beep';
+  const durations={kick:.55,snare:variant==='pad'?.11:.3,hat:.09,openHat:.48,tomHigh:.42,tomLow:.6,ride:1.05,crash:1.5};
+  const duration=metro?(variant==='bell'?.3:variant==='wood'?.075:.035):durations[voice];
+  if(!duration)throw new RangeError('Неизвестный инструмент.');
   const buffer=context.createBuffer(1,Math.ceil(context.sampleRate*duration),context.sampleRate);
   const data=buffer.getChannelData(0);
-  let previous=0;
+  let previous=0,lowNoise=0;
   for(let i=0;i<data.length;i++) {
-    const t=i/context.sampleRate,attack=Math.min(1,t/0.0015);
-    if(isDrum) {
-      const noise=Math.random()*2-1;
-      data[i]=attack*((noise-previous)*0.24*Math.exp(-t*60)+Math.sin(2*Math.PI*170*t)*0.4*Math.exp(-t*45));
-      if(kind==='softDrum')data[i]*=0.12;
-      previous=noise;
-    } else data[i]=attack*Math.sin(2*Math.PI*(kind==='accent'?1760:1320)*t)*0.32*Math.exp(-t*150);
+    const t=i/context.sampleRate,attack=Math.min(1,t/.0015),noise=Math.random()*2-1;
+    lowNoise+=.12*(noise-lowNoise);
+    const bright=(noise-previous)*.5,sine=f=>Math.sin(2*Math.PI*f*t);
+    let sample=0;
+    if(metro){
+      if(variant==='wood')sample=(sine(strong?1100:820)*.3+sine(strong?2400:1780)*.12)*Math.exp(-t*85);
+      else if(variant==='tick')sample=(bright*.32+sine(strong?2300:1650)*.16)*Math.exp(-t*230);
+      else if(variant==='bell')sample=(sine(strong?1450:1080)*.23+sine(strong?3422:2549)*.08)*Math.exp(-t*25);
+      else sample=sine(strong?1760:1320)*.32*Math.exp(-t*150);
+    }else if(voice==='kick'){
+      const base=variant==='deep'?43:variant==='electronic'?50:62,drop=variant==='electronic'?110:65;
+      const phase=2*Math.PI*(base*t+drop*.018*(1-Math.exp(-t/.018)));
+      sample=Math.sin(phase)*.6*Math.exp(-t*(variant==='deep'?12:variant==='electronic'?10:20))+bright*.08*Math.exp(-t*130);
+    }else if(voice==='snare'){
+      if(variant==='pad')sample=(noise-previous)*.24*Math.exp(-t*60)+sine(170)*.4*Math.exp(-t*45);
+      else{
+        const frequency=variant==='deep'?135:variant==='electronic'?215:185;
+        sample=(variant==='deep'?noise:bright)*.38*Math.exp(-t*(variant==='dry'?32:20))+sine(frequency)*.34*Math.exp(-t*35);
+        if(variant==='electronic')sample+=sine(330)*.13*Math.exp(-t*45);
+      }
+    }else if(voice==='tomHigh'||voice==='tomLow'){
+      const base=(voice==='tomHigh'?210:105)*(variant==='deep'?.8:1),drop=variant==='electronic'?140:45;
+      const phase=2*Math.PI*(base*t+drop*.03*(1-Math.exp(-t/.03)));
+      sample=Math.sin(phase)*.48*Math.exp(-t*(variant==='electronic'?12:17))+bright*.09*Math.exp(-t*70);
+    }else{
+      const dark=variant==='deep',electronic=variant==='electronic';
+      const metal=(sine(dark?3100:4250)+sine(dark?4630:6230)+sine(electronic?7919:7310))/3;
+      const texture=electronic?metal*.65+bright*.35:dark?lowNoise*.5+bright*.3+metal*.2:bright*.8+metal*.2;
+      const decay=voice==='hat'?75:voice==='openHat'?12:voice==='ride'?7:4.8;
+      sample=texture*(voice==='crash'?.38:.26)*Math.exp(-t*decay);
+      if(voice==='ride')sample+=sine(dark?1980:2730)*.16*Math.exp(-t*9);
+    }
+    // Fade every tail to zero so even the short preview voices end without a click.
+    data[i]=sample*attack*Math.min(1,(duration-t)/.012)*(kind==='softDrum'?.12:1);
+    previous=noise;
   }
   return buffer;
+}
+function makeDemoPlan(kind,bpm=100) {
+  if(!['metronome','kit','together'].includes(kind))throw new RangeError('Неизвестное демо.');
+  if(!Number.isInteger(bpm)||bpm<40||bpm>240)throw new RangeError('Темп должен быть от 40 до 240.');
+  const quarter=60/bpm,sounds=[],positions=[];
+  const hit=(beat,voice)=>sounds.push({at:beat*quarter,kind:voice});
+  for(let beat=0;beat<16;beat++){
+    positions.push({at:beat*quarter,end:(beat+1)*quarter,bar:Math.floor(beat/4),index:beat%4});
+    if(kind!=='kit')hit(beat,beat%4===0?'accent':'click');
+  }
+  if(kind!=='metronome')for(let bar=0;bar<4;bar++){
+    const start=bar*4;
+    hit(start,'kick');hit(start+2,'kick');if(bar%2)hit(start+2.5,'kick');
+    hit(start+1,'drum');hit(start+3,'drum');
+    if(bar===1)hit(start+2.75,'softDrum');
+    for(let step=0;step<8;step++){
+      if(bar===3&&step>=4){hit(start+step/2,step<6?'tomHigh':'tomLow');continue;}
+      hit(start+step/2,bar===2?'ride':bar===1&&step===7?'openHat':'hat');
+    }
+    if(bar===0||bar===3)hit(start,'crash');
+  }
+  sounds.sort((a,b)=>a.at-b.at);
+  return {sounds,positions,duration:16*quarter+(kind==='metronome'?.35:1.5),bars:4,loop:false,gain:.55};
+}
+function makeInstrumentPreviewPlan(instrument) {
+  if(!Object.hasOwn(KIT_SOUNDS,instrument))throw new RangeError('Неизвестный инструмент.');
+  return {sounds:instrument==='snare'?[{at:0,kind:'softDrum'},{at:.65,kind:'drum'}]:[{at:0,kind:instrument}],positions:[],duration:1.7,bars:0,loop:false,gain:.55};
 }
 class RhythmPlayer {
   constructor(context,hooks={},timers={setInterval:(fn,ms)=>setInterval(fn,ms),clearInterval:id=>clearInterval(id),requestAnimationFrame:fn=>requestAnimationFrame(fn),cancelAnimationFrame:id=>cancelAnimationFrame(id)}) {
     this.context=context;this.hooks=hooks;this.timers=timers;this.playing=false;this.sources=new Set();
     this.gain=context.createGain();this.gain.gain.value=0.6;this.gain.connect(context.destination);
-    this.buffers=Object.fromEntries(['drum','softDrum','click','accent'].map(kind=>[kind,makeSoundBuffer(context,kind)]));
+    this.planGain=context.createGain();this.planGain.connect(this.gain);
+    this.setSounds();
+  }
+  setSounds(settings) {
+    if(this.playing)this.stop();
+    this.soundSettings=normalizeSoundSettings(settings);
+    this.buffers=Object.fromEntries(Object.entries(this.soundSettings.kit).map(([id,variant])=>[id,makeSoundBuffer(this.context,id,variant)]));
+    this.buffers.drum=this.buffers.snare;
+    const samples=this.buffers.drum.getChannelData(0),soft=this.context.createBuffer(1,samples.length,this.context.sampleRate);
+    soft.getChannelData(0).set(samples.map(value=>value*.12));this.buffers.softDrum=soft;
+    for(const id of ['click','accent'])this.buffers[id]=makeSoundBuffer(this.context,id,this.soundSettings.metronome);
   }
   setVolume(value) { this.gain.gain.setTargetAtTime(Math.max(0,Math.min(1,value)),this.context.currentTime,0.01); }
   play(plan) {
     this.stop();
+    // Keep headroom for simultaneous kit voices, consistently across demo previews.
+    this.planGain.gain.value=plan.gain??1;
     this.plan=plan;this.startTime=this.context.currentTime+0.08;this.nextSound=0;this.soundCycle=0;this.visualCycle=-1;this.visualIndex=0;this.playing=true;
     this.interval=this.timers.setInterval(()=>this.schedule(),25);
     this.schedule();this.animate();
@@ -461,7 +565,7 @@ class RhythmPlayer {
       // If the tab was suspended, stop instead of playing missed hits in a burst.
       if(when<now-0.04){this.stop('interrupted');return;}
       const source=this.context.createBufferSource();
-      source.buffer=this.buffers[sound.kind];source.connect(this.gain);
+      source.buffer=this.buffers[sound.kind];source.connect(this.planGain);
       source.onended=()=>{this.sources.delete(source);source.disconnect();};
       this.sources.add(source);source.start(when);this.nextSound++;
     }
@@ -469,7 +573,7 @@ class RhythmPlayer {
   animate() {
     if(!this.playing)return;
     const elapsed=this.context.currentTime-this.startTime;
-    if(elapsed>=0) {
+    if(elapsed>=0&&this.plan.positions.length) {
       const cycle=this.plan.loop?Math.floor(elapsed/this.plan.duration):0;
       const withinCycle=this.plan.loop?elapsed-cycle*this.plan.duration:elapsed;
       if(cycle!==this.visualCycle){this.visualCycle=cycle;this.visualIndex=0;}
@@ -492,7 +596,9 @@ if(typeof document!=='undefined') {
   const form=$('generator'),accentForm=$('accent-generator'),lines=$('score-lines');
   const states={etudes:{etude:null,page:0},accents:{etude:null,page:0}};
   let mode='etudes',section='',etude=null,layout=null,printing=false;
-  let audio=null,player=null,startVersion=0,activeGlyph=null,activeMeasure=null,lastPosition=null;
+  let audio=null,player=null,startVersion=0,playbackTarget='exercise',activeGlyph=null,activeMeasure=null,lastPosition=null;
+  let soundSettings;
+  try{soundSettings=normalizeSoundSettings(JSON.parse(localStorage.getItem('rhythm-dev-sounds-v1')));}catch{soundSettings=normalizeSoundSettings();}
   const restPercent=()=>Math.min(99,Number($('rest-chance').value));
   $('rest-chance').addEventListener('input',()=>{
     const value=restPercent()+'%';$('rest-value').value=value;
@@ -535,31 +641,53 @@ if(typeof document!=='undefined') {
     activeMeasure?.classList.add('active-measure');activeGlyph?.classList.add('active-event');
     lastPosition=position;$('position').textContent=`Круг ${position.cycle} · такт ${position.bar+1} из ${etude.bars}`;
   }
-  function stopped(reason) {
-    playbackControls(false);clearHighlight();
-    $('player-status').textContent=reason==='ended'?'Упражнение сыграно. Можно слушать снова.':reason==='interrupted'?'Воспроизведение прервано. Нажми «Слушать», чтобы начать заново.':'Воспроизведение остановлено.';
+  function clearDemo() {
+    document.querySelectorAll('.demo-beats span').forEach(dot=>dot.classList.remove('active'));$('demo-position').textContent='';
+    document.querySelectorAll('[data-demo],[data-preview]').forEach(button=>button.setAttribute('aria-pressed','false'));
+    $('demo-stop').disabled=true;
   }
-  function stopPlayback() {startVersion++;player?.stop();playbackControls(false);clearHighlight();}
+  function stopped(reason) {
+    playbackControls(false);clearHighlight();clearDemo();
+    if(playbackTarget==='demo'){
+      $('demo-status').textContent=reason==='ended'?'Прослушивание завершено. Выбери другой тембр или включи демо снова.':reason==='interrupted'?'Звук прерван. Нажми на демо, чтобы начать снова.':'Прослушивание остановлено.';
+    }else $('player-status').textContent=reason==='ended'?'Упражнение сыграно. Можно слушать снова.':reason==='interrupted'?'Воспроизведение прервано. Нажми «Слушать», чтобы начать заново.':'Воспроизведение остановлено.';
+  }
+  function stopPlayback() {
+    startVersion++;player?.stop();playbackControls(false);clearHighlight();clearDemo();
+    if($('demo-status').textContent==='Подготовка звука…')$('demo-status').textContent='Прослушивание остановлено.';
+  }
+  async function prepareAudio() {
+    if(!audio||audio.state==='closed') {
+      const AudioContext=window.AudioContext||window.webkitAudioContext;
+      if(!AudioContext)throw new Error('Этот браузер не поддерживает звук. Открой приложение в Safari, Chrome или Firefox.');
+      audio=new AudioContext();player=new RhythmPlayer(audio,{onPosition:position=>{
+        if(playbackTarget==='exercise')paintPosition(position);
+        else{
+          document.querySelectorAll('.demo-beats span').forEach((dot,index)=>dot.classList.toggle('active',index===position.index));
+          $('demo-position').textContent=`Такт ${position.bar+1} из 4 · доля ${position.index+1}`;
+        }
+      },onStop:stopped});
+      audio.addEventListener('statechange',()=>{if(player.playing&&audio.state!=='running')player.stop('interrupted');});
+    }
+    await audio.resume();
+    if(audio.state!=='running')throw new Error('Не удалось включить звук. Попробуй нажать кнопку ещё раз.');
+  }
+  function applySoundSelection() {
+    if(JSON.stringify(player.soundSettings)!==JSON.stringify(soundSettings))player.setSounds(soundSettings);
+  }
   $('play').addEventListener('click',async()=>{
     if(!etude||!$('tempo').reportValidity())return;
-    const version=++startVersion;playbackControls(true);$('player-status').textContent='Подготовка звука…';
+    stopPlayback();playbackTarget='exercise';const version=++startVersion;playbackControls(true);$('player-status').textContent='Подготовка звука…';
     try {
-      if(!audio||audio.state==='closed') {
-        const AudioContext=window.AudioContext||window.webkitAudioContext;
-        if(!AudioContext)throw new Error('Этот браузер не поддерживает звук. Открой приложение в Safari, Chrome или Firefox.');
-        audio=new AudioContext();player=new RhythmPlayer(audio,{onPosition:paintPosition,onStop:stopped});
-        audio.addEventListener('statechange',()=>{if(player.playing&&audio.state!=='running')player.stop('interrupted');});
-      }
-      await audio.resume();if(version!==startVersion)return;
-      if(audio.state!=='running')throw new Error('Не удалось включить звук. Попробуй нажать «Слушать» ещё раз.');
-      player.setVolume(Number($('volume').value)/100);
+      await prepareAudio();if(version!==startVersion)return;
+      applySoundSelection();player.setVolume(Number($('volume').value)/100);
       player.play(makePlaybackPlan(etude,Number($('tempo').value),$('metronome').checked));
       $('player-status').textContent=usesAccentDynamics(etude)?'Играет по кругу до «Стоп». Акценты звучат громче.':'Играет по кругу до «Стоп». Текущая нота или пауза подсвечена.';
     }catch(error){if(version===startVersion){stopPlayback();$('player-status').textContent=error.message||'Не удалось включить звук.';}}
   });
   $('stop').addEventListener('click',()=>{stopPlayback();$('player-status').textContent='Воспроизведение остановлено.';});
-  $('volume').addEventListener('input',()=>player?.setVolume(Number($('volume').value)/100));
-  document.addEventListener('visibilitychange',()=>{if(document.hidden){const busy=$('play').disabled;stopPlayback();if(busy)$('player-status').textContent='Воспроизведение остановлено при смене вкладки.';}});
+  $('volume').addEventListener('input',()=>{if(playbackTarget==='exercise')player?.setVolume(Number($('volume').value)/100);});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopPlayback();});
   window.addEventListener('pagehide',stopPlayback);
   function renderScore(width=lines.clientWidth) {
     if(!etude||$('exercise').hidden)return;
@@ -625,6 +753,40 @@ if(typeof document!=='undefined') {
     $('accent-error').hidden=true;stopPlayback();showExercise();scrollToExercise(event);
   });
   form.addEventListener('change',()=>{$('error').hidden=true;});accentForm.addEventListener('change',()=>{$('accent-error').hidden=true;});
+  $('metronome-sounds').innerHTML=METRONOME_SOUNDS.map(([id,label])=>`<label class="sound-option"><input type="radio" name="metronome-sound" value="${id}">${label}</label>`).join('');
+  $('kit-sounds').innerHTML=Object.entries(KIT_SOUNDS).map(([id,item])=>`<div class="kit-sound"><label for="sound-${id}">${item.name}</label><div class="kit-sound-controls"><select id="sound-${id}" data-sound="${id}">${item.options.map(([value,label])=>`<option value="${value}">${label}</option>`).join('')}</select><button type="button" data-preview="${id}" aria-label="Послушать: ${item.name}" aria-pressed="false">▶</button></div></div>`).join('');
+  function showSoundSettings() {
+    document.querySelectorAll('[name="metronome-sound"]').forEach(input=>{input.checked=input.value===soundSettings.metronome;});
+    for(const id of Object.keys(KIT_SOUNDS))$('sound-'+id).value=soundSettings.kit[id];
+  }
+  function saveSoundSettings() {
+    stopPlayback();
+    try{localStorage.setItem('rhythm-dev-sounds-v1',JSON.stringify(soundSettings));$('sound-settings-status').textContent='Звуки сохранены. Метроном и малый применяются к этюдам и акцентам.';}
+    catch{$('sound-settings-status').textContent='Звуки выбраны на эту сессию. Браузер не разрешил сохранить настройки.';}
+  }
+  showSoundSettings();
+  $('metronome-sounds').addEventListener('change',event=>{soundSettings.metronome=event.target.value;saveSoundSettings();});
+  $('kit-sounds').addEventListener('change',event=>{
+    const id=event.target.dataset.sound;if(!Object.hasOwn(KIT_SOUNDS,id))return;
+    soundSettings.kit[id]=event.target.value;saveSoundSettings();
+  });
+  $('reset-sounds').addEventListener('click',()=>{soundSettings=normalizeSoundSettings();showSoundSettings();saveSoundSettings();});
+  async function startDemo(button) {
+    if(button.dataset.demo&&!$('demo-tempo').reportValidity())return;
+    stopPlayback();playbackTarget='demo';const version=++startVersion;
+    const instrument=button.dataset.preview,kind=button.dataset.demo;
+    $('demo-stop').disabled=false;button.setAttribute('aria-pressed','true');$('demo-status').textContent='Подготовка звука…';
+    try{
+      await prepareAudio();if(version!==startVersion)return;
+      applySoundSelection();player.setVolume(Number($('demo-volume').value)/100);
+      player.play(instrument?makeInstrumentPreviewPlan(instrument):makeDemoPlan(kind,Number($('demo-tempo').value)));
+      $('demo-status').textContent=instrument?(instrument==='snare'?'Малый барабан: тихий удар → акцент.':KIT_SOUNDS[instrument].name+'.'):kind==='metronome'?'Метроном: четыре такта, первая доля выделена.':kind==='kit'?'Установка: четыре такта с переходом по томам.':'Установка и метроном: четыре такта вместе.';
+    }catch(error){if(version===startVersion){stopPlayback();$('demo-status').textContent=error.message||'Не удалось включить звук.';}}
+  }
+  document.querySelectorAll('[data-demo],[data-preview]').forEach(button=>button.addEventListener('click',()=>startDemo(button)));
+  $('demo-stop').addEventListener('click',stopPlayback);
+  $('demo-tempo').addEventListener('input',()=>{if(playbackTarget==='demo')stopPlayback();});
+  $('demo-volume').addEventListener('input',()=>{if(playbackTarget==='demo')player?.setVolume(Number($('demo-volume').value)/100);});
   const rudiments={
     single:{title:'Парадидл',file:'single.png',width:1199,height:1312},
     double:{title:'Двойной парадидл',file:'double.png',width:1024,height:1536},
@@ -651,16 +813,16 @@ if(typeof document!=='undefined') {
   });
   function sectionFromHash() {
     const route=location.hash.slice(1);
-    if(route==='accents'||route==='etudes')return route;
+    if(['accents','etudes','sounds'].includes(route))return route;
     if(route==='paradiddles')return 'paradiddles/single';
     const [group,type,...extra]=route.split('/');
     return group==='paradiddles'&&Object.hasOwn(rudiments,type)&&!extra.length?route:'etudes';
   }
   function activateSection(next,scroll=false) {
     stopPlayback();section=next;
-    const isRudiment=next.startsWith('paradiddles/');
+    const isRudiment=next.startsWith('paradiddles/'),isSounds=next==='sounds';
     $('panel-etudes').hidden=next!=='etudes';$('panel-accents').hidden=next!=='accents';
-    $('exercise').hidden=isRudiment;$('panel-paradiddles').hidden=!isRudiment;
+    $('exercise').hidden=isRudiment||isSounds;$('panel-paradiddles').hidden=!isRudiment;$('panel-sounds').hidden=!isSounds;
     navigation.querySelectorAll('[data-section]').forEach(link=>{
       if(link.dataset.section===next)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');
     });
@@ -671,6 +833,7 @@ if(typeof document!=='undefined') {
       $('rudiment-image').width=item.width;$('rudiment-image').height=item.height;$('rudiment-original').href=src;
       $('rudiment-image-wrap').setAttribute('aria-label',item.title+'. Нотная схема с горизонтальной прокруткой при увеличении.');resetRudimentZoom();
       document.title=item.title+' · Ритмика — разработка';
+    }else if(isSounds){document.title='Звуки · Ритмика — разработка';
     }else{
       mode=next;document.title=(mode==='etudes'?'Этюды':'Акценты')+' · Ритмика — разработка';
       if(!states[mode].etude)(mode==='etudes'?form:accentForm).requestSubmit();else showExercise();
