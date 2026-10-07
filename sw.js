@@ -1,6 +1,6 @@
 const CACHE_PREFIX = 'rhythm-dev-';
-const CACHE_NAME = CACHE_PREFIX + 'v3';
-const APP_FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './assets/paradiddles/single.png', './assets/paradiddles/double.png', './assets/paradiddles/triple.png', './assets/paradiddles/paradiddle-diddle.png'];
+const CACHE_NAME = CACHE_PREFIX + 'v4';
+const APP_FILES = ['./', './index.html', './acoustic.js', './manifest.webmanifest', './icon-192.png', './icon-512.png', './assets/paradiddles/single.png', './assets/paradiddles/double.png', './assets/paradiddles/triple.png', './assets/paradiddles/paradiddle-diddle.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -14,7 +14,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
       .then((keys) => Promise.all(keys
-        .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
+        .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME && key !== 'rhythm-dev-samples-v1')
         .map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
