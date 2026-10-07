@@ -14,24 +14,44 @@
 <style>
 :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:light;--page:#f5f2eb;--text:#242821;--muted:#697064;--line:#dedfd5;--panel:#eaece3;--panel-line:#d9ddcf;--surface:#fffdf8;--choice:#f6f7f0;--input:#fafbf6;--input-line:#b8bfb1;--green:#354d3f;--on-green:#fff;--hover:#e8ece3;--green-hover:#233d2e;--foot:#f8f7f0;--badge:#f1e5bf;--badge-text:#6e572b;--focus:#b98120;--error:#9a3427;--highlight:#ad6500;--bar-highlight:#f4ecd2}
 :root[data-theme=dark]{color-scheme:dark;--page:#161b18;--text:#edf0e9;--muted:#b0b9ad;--line:#374139;--panel:#222b25;--panel-line:#3a463c;--surface:#1c241f;--choice:#2b352d;--input:#17211b;--input-line:#607164;--green:#b5d2a9;--on-green:#1a2a1d;--hover:#344238;--green-hover:#c6e1bb;--foot:#222d26;--badge:#423b25;--badge-text:#ead39b;--focus:#e9bc69;--error:#ffb4a8;--highlight:#ffd179;--bar-highlight:#514832}
-*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--page);color:var(--text)}main{max-width:1320px;margin:auto;padding:28px 32px 40px}header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}h1{font-size:30px;letter-spacing:-.8px;margin:0;font-weight:750}h2{font-size:17px;letter-spacing:-.3px;margin:0}.eyebrow{font-size:11px;letter-spacing:1.7px;text-transform:uppercase;font-weight:700;color:var(--green)}
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--page);color:var(--text)}.app{max-width:1560px;margin:auto;padding:28px 32px 40px}main{min-width:0}header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}h1{font-size:30px;letter-spacing:-.8px;margin:0;font-weight:750}h2{font-size:17px;letter-spacing:-.3px;margin:0}.eyebrow{font-size:11px;letter-spacing:1.7px;text-transform:uppercase;font-weight:700;color:var(--green)}
 button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:inherit;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:600;min-height:44px}button:hover{background:var(--hover)}button:disabled{opacity:.45;cursor:default}button:focus-visible,input:focus-visible,summary:focus-visible,.score-line:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.primary,.play-button{background:var(--green);border-color:var(--green);color:var(--on-green)}.primary{min-width:210px;min-height:48px}.primary:hover,.play-button:hover{background:var(--green-hover)}.play-button{min-width:115px}
-.tabs{display:flex;gap:6px;padding:5px;width:max-content;max-width:100%;margin-bottom:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}.tabs button{min-width:125px;background:transparent;border-color:transparent}.tabs button[aria-selected=true]{background:var(--surface);border-color:var(--line);box-shadow:0 2px 5px #0000000a}.tabs button[aria-selected=false]{color:var(--muted)}
+.app-layout{display:grid;grid-template-columns:218px minmax(0,1fr);gap:32px;align-items:start}.brand{display:flex;align-items:center;gap:12px}.sidebar{position:sticky;top:24px;padding:14px 10px;background:var(--panel);border:1px solid var(--panel-line);border-radius:14px}.nav-caption{font-size:10px;font-weight:750;letter-spacing:1.7px;text-transform:uppercase;color:var(--muted);padding:4px 13px 12px;margin:0}.section-nav a{display:flex;align-items:center;gap:12px;min-height:46px;padding:11px 13px;color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;border:1px solid transparent;border-radius:8px}.section-nav a:hover{background:var(--hover);color:var(--text)}.section-nav a[aria-current=page]{background:var(--surface);border-color:var(--line);color:var(--text);box-shadow:0 2px 5px #00000008}.nav-symbol{width:18px;text-align:center;font-size:18px;font-weight:400;color:var(--green)}.nav-group{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}.nav-group summary{padding:11px 13px;font-size:14px}.nav-children{border-left:1px solid var(--input-line);margin:5px 0 0 21px;padding-left:9px}.nav-children a{font-size:13px;padding:10px;min-height:44px}.menu-toggle{display:none;padding:10px 12px}.menu-icon{font-size:19px;line-height:1;vertical-align:-1px;margin-right:7px}.menu-dialog{position:fixed;inset:0 auto 0 0;width:min(320px,88vw);height:100dvh;max-height:none;max-width:none;margin:0;padding:20px 14px;border:0;border-right:1px solid var(--line);background:var(--page);color:var(--text);overflow-y:auto}.menu-dialog::backdrop{background:#0008}.menu-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 8px 24px}.menu-heading h2{font-size:22px}.menu-heading button{font-size:21px;padding:5px 13px}.section-heading{margin:0 0 22px}.section-heading h2{font:400 32px/1.2 Georgia,serif;margin:7px 0 12px}.section-heading p{font-size:14px;line-height:1.6;color:var(--muted);max-width:65ch;margin:0}.rudiment-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--foot)}.rudiment-tools p{margin:0;font-size:12px;color:var(--muted)}.rudiment-actions{display:flex;gap:8px;flex-wrap:wrap}.button-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text);font-size:13px;font-weight:600;text-decoration:none}.button-link:hover{background:var(--hover)}.rudiment-figure{margin:0}.rudiment-image-wrap{overflow-x:auto;background:#fff;overscroll-behavior-x:contain}.rudiment-image-wrap:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}.rudiment-image-wrap img{display:block;width:100%;height:auto;max-width:1200px;margin:auto}.rudiment-image-wrap.is-zoomed img{width:1200px;max-width:none;margin:0 auto}.rudiment-figure figcaption{padding:14px 18px;font-size:12px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line)}
+
 .controls{display:grid;grid-template-columns:160px minmax(0,1fr);gap:25px;align-items:center;padding:24px;background:var(--panel);border:1px solid var(--panel-line);border-radius:15px;margin-bottom:25px}.accent-controls{grid-template-columns:repeat(4,minmax(0,1fr));align-items:start}.accent-controls .generate-area{grid-column:1/-1}.accent-controls small{max-width:32ch}label{font-size:13px;font-weight:650;display:block;margin-bottom:8px}small{display:block;font-size:12px;line-height:1.5;color:var(--muted);margin-top:7px}input[type=number]{width:100%;height:45px;border:1px solid var(--input-line);border-radius:7px;background:var(--input);padding:8px 12px;font:inherit;color:inherit}input[type=checkbox]{accent-color:var(--green);width:17px;height:17px;margin:0;flex-shrink:0}input[type=range]{accent-color:var(--green)}fieldset{margin:0;border:0;padding:0;min-width:0}.palette>legend{font-size:13px;font-weight:650;margin-bottom:12px}.duration-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:10px}.duration-choice{background:var(--choice);border:1px solid var(--panel-line);border-radius:8px;padding:12px 10px}.duration-name{font-size:12px;font-weight:650;margin:0 0 10px;white-space:nowrap}.choice{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;min-height:30px;margin:0;cursor:pointer}.generate-area{display:flex;align-items:center;gap:18px}.generate-area small{margin:0}.error{grid-column:1/-1;color:var(--error);font-size:13px;margin:0}
 .generation-settings{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px}.rest-control{flex:1 1 250px;min-width:0}.rest-label{display:flex;align-items:center;justify-content:space-between;gap:12px}.rest-label label{margin:0}.rest-label output{font-size:13px;font-weight:650;font-variant-numeric:tabular-nums;color:var(--green)}.rest-control input{display:block;width:100%;margin:9px 0 0}.generation-settings .generate-area{flex:2 1 320px;min-width:0}
 #exercise{scroll-margin-top:16px}.sheet{background:var(--surface);border:1px solid var(--line);border-radius:15px;overflow:hidden;min-width:0}.sheet-header{padding:22px 26px 18px;display:flex;gap:15px;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.sheet-title{font-family:Georgia,serif;font-weight:400;font-size:27px;margin:5px 0 8px}.meta{font-size:12px;color:var(--muted);line-height:1.5}.badge{font-family:Georgia,serif;font-size:23px;background:var(--badge);color:var(--badge-text);padding:8px 12px;border-radius:6px;white-space:nowrap}.score{padding:18px 24px 14px}.score-line{margin:4px 0 16px;overflow-x:auto}.score-line svg{display:block;width:100%;height:auto;color:var(--text)}.score-line.dense svg{min-width:var(--dense-width)}.sheet-footer{padding:14px 26px;background:var(--foot);border-top:1px solid var(--line);display:flex;gap:22px;font-size:12px;color:var(--muted);align-items:center;flex-wrap:wrap}.actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}.status{font-size:12px;color:var(--muted);min-height:18px;margin:12px 0 0}.help{font-size:13px;line-height:1.65;margin-top:22px;color:var(--muted)}summary{cursor:pointer;color:var(--text);font-weight:600}details p{max-width:760px;margin:12px 0}footer{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;border-top:1px solid var(--line);padding-top:20px;margin-top:30px}.accent-text{white-space:pre-wrap;overflow-wrap:anywhere;font:600 18px/1.8 system-ui,sans-serif;font-variant-numeric:tabular-nums;color:var(--text)}.pagination{display:flex;justify-content:center;align-items:center;gap:14px;padding:12px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 .player{display:flex;align-items:center;gap:16px 22px;flex-wrap:wrap;padding:16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:18px}.transport{display:flex;gap:8px}.tempo-control{display:flex;align-items:center;gap:9px}.tempo-control label{margin:0}.tempo-control input{width:76px;height:42px}.tempo-control span{font-size:11px;color:var(--muted)}.volume-control{display:flex;align-items:center;gap:8px;font-size:12px;margin:0;font-weight:500}.volume-control input{width:85px}.player-status{width:100%;font-size:12px;color:var(--muted);margin:0}.position{font-size:12px;font-variant-numeric:tabular-nums;color:var(--green)}.playback-bar{fill:var(--bar-highlight)}.active-measure>.playback-bar{opacity:1}.active-event{color:var(--highlight);fill:currentColor}
 @media(max-width:1100px){.controls{grid-template-columns:140px minmax(0,1fr);gap:20px}.accent-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){main{padding:20px 16px 30px}h1{font-size:26px}header{margin-bottom:18px}.tabs{width:100%}.tabs button{flex:1;min-width:0}.controls{grid-template-columns:1fr;padding:18px;gap:18px}.field{display:grid;grid-template-columns:1fr 95px;align-items:center;gap:5px 12px}.field label{margin:0}.field small{grid-column:1/-1;margin:0;max-width:none}.duration-options{grid-template-columns:repeat(3,minmax(0,1fr))}.generate-area{display:block}.primary{width:100%}.generate-area small{margin-top:9px}.sheet-header{padding:18px}.score{padding:12px 12px 5px}.sheet-footer{padding:12px 18px;gap:7px 16px}.sheet-title{font-size:24px}}
+@media(max-width:1000px){.app-layout{grid-template-columns:190px minmax(0,1fr);gap:22px}.controls{grid-template-columns:1fr}.accent-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.app{padding:20px 16px 30px}.app-layout{display:block}.sidebar{display:none}.menu-toggle{display:block}.brand{gap:10px}header h1{font-size:26px}.section-heading h2{font-size:28px}#exercise{scroll-margin-top:12px}}
+@media(max-width:700px){.accent-controls{grid-template-columns:1fr}}
+@media(max-width:420px){header{gap:8px}.brand{gap:8px}header h1{font-size:24px}#theme-toggle{font-size:12px;padding:10px}.menu-toggle .menu-label{display:none}.menu-icon{margin:0}.rudiment-tools{padding:12px}.rudiment-actions{width:100%}.rudiment-actions>*{flex:1}.section-heading h2{font-size:26px}}
+@media(max-width:700px){h1{font-size:26px}header{margin-bottom:18px}.controls{grid-template-columns:1fr;padding:18px;gap:18px}.field{display:grid;grid-template-columns:1fr 95px;align-items:center;gap:5px 12px}.field label{margin:0}.field small{grid-column:1/-1;margin:0;max-width:none}.duration-options{grid-template-columns:repeat(3,minmax(0,1fr))}.generate-area{display:block}.primary{width:100%}.generate-area small{margin-top:9px}.sheet-header{padding:18px}.score{padding:12px 12px 5px}.sheet-footer{padding:12px 18px;gap:7px 16px}.sheet-title{font-size:24px}}
 @media(max-width:400px){.duration-options{gap:8px}.duration-choice{padding:10px 7px}.duration-name{font-size:11px}.choice{font-size:12px;gap:5px}}
-@media print{@page{size:A4;margin:12mm}:root{--text:#242821;--muted:#697064;--surface:#fff;--foot:#fff;--line:#dedfd5;--green:#354d3f;--badge:#f1e5bf;--badge-text:#6e572b}body{background:white;color:#242821}main{padding:0;max-width:none}header,.tabs,.controls,.player,.actions,.status,.help,footer,.pagination{display:none}.sheet{border:0;border-radius:0}.sheet-header{padding:0 0 15px}.score{padding:10px 0}.score-line{break-inside:avoid;overflow:visible;margin:5px 0 14px}.score-line svg{width:100%;min-width:0!important}.playback-bar{opacity:0!important}.active-event{color:#242821}}
+@media print{@page{size:A4;margin:12mm}:root{--text:#242821;--muted:#697064;--surface:#fff;--foot:#fff;--line:#dedfd5;--green:#354d3f;--badge:#f1e5bf;--badge-text:#6e572b}body{background:white;color:#242821}.app{padding:0;max-width:none}.app-layout{display:block}.sidebar,.menu-dialog,.rudiment-tools,header,.controls,.player,.actions,.status,.help,footer,.pagination{display:none}.sheet{border:0;border-radius:0}.sheet-header{padding:0 0 15px}.score{padding:10px 0}.score-line{break-inside:avoid;overflow:visible;margin:5px 0 14px}.score-line svg{width:100%;min-width:0!important}.playback-bar{opacity:0!important}.active-event{color:#242821}.rudiment-image-wrap{overflow:visible}.rudiment-image-wrap.is-zoomed img{width:100%}}
 </style>
 </head>
 <body>
-<main>
-<header><h1>Ритмика</h1><button id="theme-toggle" type="button">Тёмная тема</button></header>
-<div class="tabs" role="tablist" aria-label="Упражнение"><button id="tab-etudes" type="button" role="tab" aria-selected="true" aria-controls="panel-etudes" tabindex="0">Этюды</button><button id="tab-accents" type="button" role="tab" aria-selected="false" aria-controls="panel-accents" tabindex="-1">Акценты</button></div>
-<section id="panel-etudes" role="tabpanel" aria-labelledby="tab-etudes">
+<div class="app">
+<header><div class="brand"><button id="menu-toggle" class="menu-toggle" type="button" aria-label="Открыть разделы" aria-haspopup="dialog" aria-controls="menu-dialog" aria-expanded="false"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Разделы</span></button><h1>Ритмика</h1></div><button id="theme-toggle" type="button">Тёмная тема</button></header>
+<div class="app-layout">
+<aside class="sidebar" id="sidebar">
+<nav class="section-nav" id="section-nav" aria-label="Разделы приложения">
+<p class="nav-caption">Практика</p>
+<a href="#etudes" id="nav-etudes" data-section="etudes" aria-current="page"><span class="nav-symbol" aria-hidden="true">♫</span>Этюды</a>
+<a href="#accents" id="nav-accents" data-section="accents"><span class="nav-symbol" aria-hidden="true">&gt;</span>Акценты</a>
+<details class="nav-group" id="paradiddles-nav" open><summary>Парадидлы</summary><div class="nav-children">
+<a href="#paradiddles/single" data-section="paradiddles/single">Парадидл</a>
+<a href="#paradiddles/double" data-section="paradiddles/double">Двойной парадидл</a>
+<a href="#paradiddles/triple" data-section="paradiddles/triple">Тройной парадидл</a>
+<a href="#paradiddles/paradiddle-diddle" data-section="paradiddles/paradiddle-diddle">Парадидл-дидл</a>
+</div></details>
+</nav>
+</aside>
+<main id="main-content">
+
+<section id="panel-etudes" aria-labelledby="nav-etudes">
 <form id="generator" class="controls">
 <div class="field"><label for="bars">Количество тактов</label><input id="bars" type="number" min="1" max="64" step="1" value="8" required inputmode="numeric"><small>От 1 до 64 · размер 4/4</small></div>
 <fieldset class="palette" aria-describedby="selection-hint"><legend>Что использовать в этюде</legend><div class="duration-options">
@@ -49,7 +69,7 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 <p class="error" id="error" role="alert" hidden></p>
 </form>
 </section>
-<section id="panel-accents" role="tabpanel" aria-labelledby="tab-accents" hidden>
+<section id="panel-accents" aria-labelledby="nav-accents" hidden>
 <form id="accent-generator" class="controls accent-controls">
 <div class="field"><label for="accent-beats">Долей в такте</label><input id="accent-beats" type="number" min="1" max="64" step="1" value="4" required inputmode="numeric"><small>Одна доля — четверть</small></div>
 <div class="field"><label for="accent-notes">Нот в доле</label><input id="accent-notes" type="number" min="1" max="64" step="1" value="3" required inputmode="numeric"><small>Например: 2 — восьмые, 3 — триоли</small></div>
@@ -58,6 +78,13 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 <div class="generate-area"><button class="primary" type="submit">Сгенерировать акценты ↗</button><small>Все позиции — ноты. Знак &gt; сверху — акцент.</small></div>
 <p class="error" id="accent-error" role="alert" hidden></p>
 </form>
+</section>
+<section id="panel-paradiddles" aria-labelledby="rudiment-title" hidden>
+<div class="section-heading"><div class="eyebrow">Парадидлы · практика рук</div><h2 id="rudiment-title">Парадидл</h2><p>Полный цикл смещений. Проходи строки по порядку, сохраняя ровную пульсацию и выделяя акценты.</p></div>
+<div class="sheet">
+<div class="rudiment-tools"><p>R — правая рука · L — левая рука</p><div class="rudiment-actions"><button id="rudiment-zoom" type="button" aria-pressed="false" aria-controls="rudiment-image-wrap">Увеличить</button><a id="rudiment-original" class="button-link" href="./assets/paradiddles/single.png" target="_blank" rel="noopener">Открыть оригинал ↗</a></div></div>
+<figure class="rudiment-figure"><div class="rudiment-image-wrap" id="rudiment-image-wrap" tabindex="0" role="region" aria-label="Нотная схема парадидла. После увеличения можно прокручивать по горизонтали."><img id="rudiment-image" src="./assets/paradiddles/single.png" alt="Парадидл: полный цикл смещений с аппликатурой R и L и отмеченными акцентами" width="1199" height="1312"></div><figcaption>Красным отмечены дополнительные удары. На небольшом экране нажми «Увеличить» и двигай схему по горизонтали.</figcaption></figure>
+</div>
 </section>
 <section id="exercise" aria-label="Результат упражнения">
 <div class="player" role="group" aria-label="Воспроизведение упражнения">
@@ -84,6 +111,9 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 </section>
 <footer><span>Практика на пэде · без регистрации</span><span id="offline-status">Всё создаётся в твоём браузере</span></footer>
 </main>
+</div>
+</div>
+<dialog class="menu-dialog" id="menu-dialog" aria-labelledby="menu-title"><div class="menu-heading"><h2 id="menu-title">Разделы</h2><button id="menu-close" type="button" aria-label="Закрыть меню">×</button></div><div id="mobile-navigation"></div></dialog>
 <script>
 'use strict';
 // 120 ticks per quarter represent dotted notes and 3-, 5-, 6-tuplets exactly.
@@ -461,7 +491,7 @@ if(typeof document!=='undefined') {
   const $=id=>document.getElementById(id);
   const form=$('generator'),accentForm=$('accent-generator'),lines=$('score-lines');
   const states={etudes:{etude:null,page:0},accents:{etude:null,page:0}};
-  let mode='etudes',etude=null,layout=null,printing=false;
+  let mode='etudes',section='',etude=null,layout=null,printing=false;
   let audio=null,player=null,startVersion=0,activeGlyph=null,activeMeasure=null,lastPosition=null;
   const restPercent=()=>Math.min(99,Number($('rest-chance').value));
   $('rest-chance').addEventListener('input',()=>{
@@ -532,7 +562,7 @@ if(typeof document!=='undefined') {
   document.addEventListener('visibilitychange',()=>{if(document.hidden){const busy=$('play').disabled;stopPlayback();if(busy)$('player-status').textContent='Воспроизведение остановлено при смене вкладки.';}});
   window.addEventListener('pagehide',stopPlayback);
   function renderScore(width=lines.clientWidth) {
-    if(!etude)return;
+    if(!etude||$('exercise').hidden)return;
     const pageSize=printing?etude.bars:barsPerPage();
     const first=printing?0:states[mode].page*pageSize,last=Math.min(etude.bars,first+pageSize);
     const dense=mode==='accents'&&etude.beats*etude.subdivision>24;
@@ -572,7 +602,7 @@ if(typeof document!=='undefined') {
     $('player-status').textContent=usesAccentDynamics(etude)?'Слушать: акценты громче, остальные ноты тише.':'Упражнение готово к прослушиванию.';
   }
   function scrollToExercise(event) {
-    // Automatic initial generation and the first tab visit should not move the page.
+    // Automatic initial generation and the first section visit should not move the page.
     if(!event.submitter)return;
     requestAnimationFrame(()=>$('exercise').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
   }
@@ -595,22 +625,67 @@ if(typeof document!=='undefined') {
     $('accent-error').hidden=true;stopPlayback();showExercise();scrollToExercise(event);
   });
   form.addEventListener('change',()=>{$('error').hidden=true;});accentForm.addEventListener('change',()=>{$('accent-error').hidden=true;});
-  function activateTab(next) {
-    stopPlayback();mode=next;
-    for(const id of ['etudes','accents']){
-      const selected=id===mode;$('tab-'+id).setAttribute('aria-selected',selected);$('tab-'+id).tabIndex=selected?0:-1;$('panel-'+id).hidden=!selected;
-    }
-    try{history.replaceState(null,'','#'+mode);}catch{}
-    if(!states[mode].etude)(mode==='etudes'?form:accentForm).requestSubmit();else showExercise();
+  const rudiments={
+    single:{title:'Парадидл',file:'single.png',width:1199,height:1312},
+    double:{title:'Двойной парадидл',file:'double.png',width:1024,height:1536},
+    triple:{title:'Тройной парадидл',file:'triple.png',width:1024,height:1536},
+    'paradiddle-diddle':{title:'Парадидл-дидл',file:'paradiddle-diddle.png',width:1024,height:1536}
+  };
+  const menu=$('menu-dialog'),navigation=$('section-nav'),mobileMenu=window.matchMedia('(max-width:800px)');
+  const menuButton=$('menu-toggle');
+  menuButton.addEventListener('click',()=>{
+    $('mobile-navigation').append(navigation);menu.showModal();menuButton.setAttribute('aria-expanded','true');
+  });
+  $('menu-close').addEventListener('click',()=>menu.close());
+  menu.addEventListener('click',event=>{if(event.target===menu)menu.close();});
+  menu.addEventListener('close',()=>{$('sidebar').append(navigation);menuButton.setAttribute('aria-expanded','false');});
+  mobileMenu.addEventListener('change',()=>{if(!mobileMenu.matches&&menu.open)menu.close();});
+  function resetRudimentZoom() {
+    $('rudiment-image-wrap').classList.remove('is-zoomed');$('rudiment-image-wrap').scrollLeft=0;
+    $('rudiment-zoom').setAttribute('aria-pressed','false');$('rudiment-zoom').textContent='Увеличить';
   }
-  for(const id of ['etudes','accents']){
-    $('tab-'+id).addEventListener('click',()=>activateTab(id));
-    $('tab-'+id).addEventListener('keydown',event=>{
-      if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
-      event.preventDefault();const next=event.key==='Home'?'etudes':event.key==='End'?'accents':id==='etudes'?'accents':'etudes';activateTab(next);$('tab-'+next).focus();
+  $('rudiment-zoom').addEventListener('click',()=>{
+    const zoomed=$('rudiment-image-wrap').classList.toggle('is-zoomed');
+    $('rudiment-zoom').setAttribute('aria-pressed',String(zoomed));$('rudiment-zoom').textContent=zoomed?'Вписать по ширине':'Увеличить';
+    if(!zoomed)$('rudiment-image-wrap').scrollLeft=0;
+  });
+  function sectionFromHash() {
+    const route=location.hash.slice(1);
+    if(route==='accents'||route==='etudes')return route;
+    if(route==='paradiddles')return 'paradiddles/single';
+    const [group,type,...extra]=route.split('/');
+    return group==='paradiddles'&&Object.hasOwn(rudiments,type)&&!extra.length?route:'etudes';
+  }
+  function activateSection(next,scroll=false) {
+    stopPlayback();section=next;
+    const isRudiment=next.startsWith('paradiddles/');
+    $('panel-etudes').hidden=next!=='etudes';$('panel-accents').hidden=next!=='accents';
+    $('exercise').hidden=isRudiment;$('panel-paradiddles').hidden=!isRudiment;
+    navigation.querySelectorAll('[data-section]').forEach(link=>{
+      if(link.dataset.section===next)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');
     });
+    if(isRudiment){
+      const item=rudiments[next.split('/')[1]],src='./assets/paradiddles/'+item.file;
+      $('paradiddles-nav').open=true;$('rudiment-title').textContent=item.title;
+      $('rudiment-image').src=src;$('rudiment-image').alt=item.title+': полный цикл смещений с аппликатурой R и L и отмеченными акцентами';
+      $('rudiment-image').width=item.width;$('rudiment-image').height=item.height;$('rudiment-original').href=src;
+      $('rudiment-image-wrap').setAttribute('aria-label',item.title+'. Нотная схема с горизонтальной прокруткой при увеличении.');resetRudimentZoom();
+      document.title=item.title+' · Ритмика — разработка';
+    }else{
+      mode=next;document.title=(mode==='etudes'?'Этюды':'Акценты')+' · Ритмика — разработка';
+      if(!states[mode].etude)(mode==='etudes'?form:accentForm).requestSubmit();else showExercise();
+    }
+    if(menu.open)menu.close();
+    if(scroll)window.scrollTo({top:0,behavior:'instant'});
   }
-  window.addEventListener('hashchange',()=>{const next=location.hash==='#accents'?'accents':'etudes';if(next!==mode)activateTab(next);});
+  navigation.addEventListener('click',event=>{
+    const link=event.target.closest('[data-section]');
+    if(!link||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();const next=link.dataset.section;
+    if(location.hash!=='#'+next)history.pushState(null,'','#'+next);
+    activateSection(next,true);
+  });
+  window.addEventListener('hashchange',()=>{const next=sectionFromHash();if(next!==section)activateSection(next,true);});
   let observedWidth=0;
   new ResizeObserver(entries=>{const width=entries[0].contentRect.width;if(!printing&&Math.abs(width-observedWidth)>1){observedWidth=width;renderScore(width);}}).observe(lines);
   window.addEventListener('beforeprint',()=>{stopPlayback();printing=true;renderScore(720);});
@@ -648,7 +723,7 @@ if(typeof document!=='undefined') {
     try{await navigator.clipboard.writeText($('accent-text').textContent);$('status').textContent='Позиции акцентов скопированы.';}
     catch{$('status').textContent='Не удалось скопировать. Выдели последовательность вручную.';}
   });
-  activateTab(location.hash==='#accents'?'accents':'etudes');
+  activateSection(sectionFromHash());
   if('serviceWorker' in navigator&&['https:','http:'].includes(location.protocol))navigator.serviceWorker.register('./sw.js').then(()=>navigator.serviceWorker.ready).then(()=>{$('offline-status').textContent='Готово к работе без интернета';}).catch(()=>{});
 }
 
