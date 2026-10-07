@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f5f2eb">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Ритмика">
+<meta name="apple-mobile-web-app-title" content="Ритмика Dev">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<script data-theme-init>try{document.documentElement.dataset.theme=localStorage.getItem('rhythm-practice-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch{document.documentElement.dataset.theme='light';}</script>
-<title>Ритмика — этюды и акценты</title>
+<script data-theme-init>try{document.documentElement.dataset.theme=localStorage.getItem('rhythm-dev-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch{document.documentElement.dataset.theme='light';}</script>
+<title>Ритмика — разработка</title>
 <style>
 :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:light;--page:#f5f2eb;--text:#242821;--muted:#697064;--line:#dedfd5;--panel:#eaece3;--panel-line:#d9ddcf;--surface:#fffdf8;--choice:#f6f7f0;--input:#fafbf6;--input-line:#b8bfb1;--green:#354d3f;--on-green:#fff;--hover:#e8ece3;--green-hover:#233d2e;--foot:#f8f7f0;--badge:#f1e5bf;--badge-text:#6e572b;--focus:#b98120;--error:#9a3427;--highlight:#ad6500;--bar-highlight:#f4ecd2}
 :root[data-theme=dark]{color-scheme:dark;--page:#161b18;--text:#edf0e9;--muted:#b0b9ad;--line:#374139;--panel:#222b25;--panel-line:#3a463c;--surface:#1c241f;--choice:#2b352d;--input:#17211b;--input-line:#607164;--green:#b5d2a9;--on-green:#1a2a1d;--hover:#344238;--green-hover:#c6e1bb;--foot:#222d26;--badge:#423b25;--badge-text:#ead39b;--focus:#e9bc69;--error:#ffb4a8;--highlight:#ffd179;--bar-highlight:#514832}
@@ -482,7 +482,7 @@ if(typeof document!=='undefined') {
   applyTheme(document.documentElement.dataset.theme==='dark'?'dark':'light');
   $('theme-toggle').addEventListener('click',()=>{
     const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';applyTheme(theme);
-    try{localStorage.setItem('rhythm-practice-theme',theme);}catch{}
+    try{localStorage.setItem('rhythm-dev-theme',theme);}catch{}
   });
   function playbackControls(busy) {
     $('play').disabled=busy||!etude;$('stop').disabled=!busy;$('tempo').disabled=busy;$('metronome').disabled=busy;
