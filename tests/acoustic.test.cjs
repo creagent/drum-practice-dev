@@ -75,8 +75,8 @@ for(const bpm of [40,100,240]){
   const timeout=new AcousticLibrary(audio(),{cacheStorage:null,timeout:5,fetcher:(_,{signal})=>new Promise((_,reject)=>signal.addEventListener('abort',()=>reject(Error('aborted'))))});await assert.rejects(timeout.load(['kick']),/Не удалось/);
   // Exercise actual worker activation and navigation, preserving the independently loaded library.
   const handlers={},deleted=[],puts=[];let waited;
-  vm.runInNewContext(fs.readFileSync(path.join(root,'sw.js'),'utf8'),{URL,self:{addEventListener:(type,fn)=>handlers[type]=fn,clients:{claim:async()=>{}},location:{origin:'https://example.org'},registration:{scope:'https://example.org/drum-practice-dev/'}},caches:{keys:async()=>['rhythm-dev-v3','rhythm-dev-v4','rhythm-dev-samples-v1','rhythm-practice-v1'],delete:async key=>deleted.push(key),open:async()=>({put:async(...args)=>puts.push(args)})},fetch:async()=>new Response('updated page')});
-  handlers.activate({waitUntil:p=>waited=p});await waited;assert.deepEqual(deleted,['rhythm-dev-v3']);
+  vm.runInNewContext(fs.readFileSync(path.join(root,'sw.js'),'utf8'),{URL,self:{addEventListener:(type,fn)=>handlers[type]=fn,clients:{claim:async()=>{}},location:{origin:'https://example.org'},registration:{scope:'https://example.org/drum-practice-dev/'}},caches:{keys:async()=>['rhythm-dev-v3','rhythm-dev-v4','rhythm-dev-v5','rhythm-dev-samples-v1','rhythm-practice-v1'],delete:async key=>deleted.push(key),open:async()=>({put:async(...args)=>puts.push(args)})},fetch:async()=>new Response('updated page')});
+  handlers.activate({waitUntil:p=>waited=p});await waited;assert.deepEqual(deleted,['rhythm-dev-v3','rhythm-dev-v4']);
   handlers.fetch({request:{method:'GET',mode:'navigate',url:'https://example.org/drum-practice-dev/'},respondWith:p=>waited=p});assert.equal(await(await waited).text(),'updated page');assert.equal(puts[0].length,2);assert.equal(puts[0][0],'./index.html');
   console.log('PASS: 20 recorded WAVs, dynamics, alternating hits, hi-hat choke, headroom, tails, scheduling, cached offline playback, retries, timeouts and service-worker updates.');
 })().catch(error=>{console.error(error);process.exitCode=1;});

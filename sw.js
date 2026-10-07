@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'rhythm-dev-';
-const CACHE_NAME = CACHE_PREFIX + 'v4';
+const CACHE_NAME = CACHE_PREFIX + 'v5';
 const APP_FILES = ['./', './index.html', './acoustic.js', './manifest.webmanifest', './icon-192.png', './icon-512.png', './assets/paradiddles/single.png', './assets/paradiddles/double.png', './assets/paradiddles/triple.png', './assets/paradiddles/paradiddle-diddle.png'];
 
 self.addEventListener('install', (event) => {
