@@ -30,11 +30,12 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 @media(max-width:700px){h1{font-size:26px}header{margin-bottom:18px}.controls{grid-template-columns:1fr;padding:18px;gap:18px}.field{display:grid;grid-template-columns:1fr 95px;align-items:center;gap:5px 12px}.field label{margin:0}.field small{grid-column:1/-1;margin:0;max-width:none}.duration-options{grid-template-columns:repeat(3,minmax(0,1fr))}.generate-area{display:block}.primary{width:100%}.generate-area small{margin-top:9px}.sheet-header{padding:18px}.score{padding:12px 12px 5px}.sheet-footer{padding:12px 18px;gap:7px 16px}.sheet-title{font-size:24px}}
 @media(max-width:400px){.duration-options{gap:8px}.duration-choice{padding:10px 7px}.duration-name{font-size:11px}.choice{font-size:12px;gap:5px}}
 
+.melody-controls{grid-template-columns:170px minmax(0,1fr)}.melody-patterns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.melody-pattern{padding:12px;background:var(--choice);border:1px solid var(--panel-line);border-radius:9px}.melody-pattern small{display:block;margin-top:7px;color:var(--muted);font-size:11px}.melody-pattern svg{display:block;width:90px;height:48px;margin:4px 0;color:var(--text)}.melody-controls select,.melody-voice select{font:inherit;color:var(--text);background:var(--input);border:1px solid var(--input-line);border-radius:8px;min-height:44px;padding:9px;max-width:100%}.melody-voice{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:14px}.melody-voice .sound-note{margin-top:8px}.melody-controls .generate-area{grid-column:auto}.melody-controls .error{grid-column:1/-1}.active-stroke{color:var(--highlight);fill:currentColor}@media(max-width:700px){.melody-controls{grid-template-columns:1fr}.melody-voice select{width:100%}.melody-pattern{padding:10px}.melody-pattern .choice{align-items:flex-start}}
 .acoustic-preset{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px;background:var(--panel);border:1px solid var(--panel-line);border-radius:10px}.acoustic-preset strong{font-size:14px}.acoustic-preset p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.6;max-width:50ch}.acoustic-preset button{flex-shrink:0;white-space:normal;max-width:100%}#acoustic-status{margin:12px 0 18px}.sound-credits a{color:inherit}.exercise-files{margin-bottom:20px}#file-status{overflow-wrap:anywhere}.exercise-files .actions{margin-top:0}.exercise-files .sound-note{margin-top:8px}.sound-panel{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:18px}.sound-demo{background:var(--panel);border-color:var(--panel-line)}.sound-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}.sound-panel h3{font-size:17px;margin:0 0 6px}.sound-panel-heading p,.sound-note{font-size:12px;line-height:1.6;color:var(--muted);margin:0}.sound-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.sound-option{display:flex;align-items:center;gap:9px;background:var(--choice);border:1px solid var(--panel-line);border-radius:8px;min-height:52px;padding:12px 10px;margin:0;font-size:12px;cursor:pointer}.sound-option:has(input:checked){border-color:var(--green);background:var(--hover)}.sound-option input{accent-color:var(--green);margin:0;width:17px;height:17px;flex-shrink:0}.kit-sounds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.kit-sound{padding:14px;background:var(--choice);border:1px solid var(--panel-line);border-radius:10px}.kit-sound-controls{display:flex;gap:8px}.kit-sound select{min-width:0;flex:1;width:100%;padding:10px;border:1px solid var(--input-line);border-radius:7px;background:var(--input);color:var(--text);font:inherit;font-size:13px;min-height:44px}.kit-sound select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.kit-sound button{flex-shrink:0;min-width:44px}.sound-note{margin-top:18px}.demo-transport{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.demo-transport .volume-control{margin-left:auto}.demo-transport button[aria-pressed=true],.kit-sound button[aria-pressed=true]{outline:2px solid var(--green);outline-offset:2px}.demo-progress{display:flex;align-items:center;gap:12px;min-height:34px;margin:10px 0 3px;font-size:12px;color:var(--green);font-variant-numeric:tabular-nums}.demo-beats{display:flex;gap:7px}.demo-beats span{display:block;width:9px;height:9px;border-radius:50%;background:var(--input-line)}.demo-beats span.active{background:var(--green);box-shadow:0 0 0 3px var(--hover)}.sound-settings-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}.sound-settings-footer .status{margin:0}
 @media(max-width:1100px){.sound-options{grid-template-columns:repeat(2,minmax(0,1fr))}.demo-transport .volume-control{margin-left:0}}
 @media(max-width:700px){.acoustic-preset{align-items:stretch;flex-direction:column}.sound-panel{padding:18px}.sound-panel-heading{align-items:flex-start;flex-direction:column}.kit-sounds{grid-template-columns:1fr}.demo-transport button{flex:1 1 42%}.demo-transport .volume-control{width:100%;margin-top:8px}.demo-transport .volume-control input{flex:1}.sound-option{font-size:12px;padding:10px 7px}}
 
-@media print{@page{size:A4;margin:12mm}:root{--text:#242821;--muted:#697064;--surface:#fff;--foot:#fff;--line:#dedfd5;--green:#354d3f;--badge:#f1e5bf;--badge-text:#6e572b}body{background:white;color:#242821}.app{padding:0;max-width:none}.app-layout{display:block}.sidebar,.menu-dialog,.exercise-files,.rudiment-tools,header,.controls,.player,.actions,.status,.help,footer,.pagination{display:none}.sheet{border:0;border-radius:0}.sheet-header{padding:0 0 15px}.score{padding:10px 0}.score-line{break-inside:avoid;overflow:visible;margin:5px 0 14px}.score-line svg{width:100%;min-width:0!important}.playback-bar{opacity:0!important}.active-event{color:#242821}.rudiment-image-wrap{overflow:visible}.rudiment-image-wrap.is-zoomed img{width:100%}}
+@media print{@page{size:A4;margin:12mm}:root{--text:#242821;--muted:#697064;--surface:#fff;--foot:#fff;--line:#dedfd5;--green:#354d3f;--badge:#f1e5bf;--badge-text:#6e572b}body{background:white;color:#242821}.app{padding:0;max-width:none}.app-layout{display:block}.sidebar,.menu-dialog,.exercise-files,.melody-voice,.rudiment-tools,header,.controls,.player,.actions,.status,.help,footer,.pagination{display:none}.sheet{border:0;border-radius:0}.sheet-header{padding:0 0 15px}.score{padding:10px 0}.score-line{break-inside:avoid;overflow:visible;margin:5px 0 14px}.score-line svg{width:100%;min-width:0!important}.playback-bar{opacity:0!important}.active-event{color:#242821}.rudiment-image-wrap{overflow:visible}.rudiment-image-wrap.is-zoomed img{width:100%}}
 </style>
 </head>
 <body>
@@ -51,6 +52,7 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 <a href="#paradiddles/double" data-section="paradiddles/double">Двойной парадидл</a>
 <a href="#paradiddles/triple" data-section="paradiddles/triple">Тройной парадидл</a>
 <a href="#paradiddles/paradiddle-diddle" data-section="paradiddles/paradiddle-diddle">Парадидл-дидл</a>
+<a href="#paradiddles/melodies" id="nav-melodies" data-section="paradiddles/melodies">Обыгрывание мелодий</a>
 </div></details>
 <div class="nav-group"><a href="#sounds" id="nav-sounds" data-section="sounds"><span class="nav-symbol" aria-hidden="true">♪</span>Звуки</a></div>
 </nav>
@@ -89,15 +91,24 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 <p class="error" id="accent-error" role="alert" hidden></p>
 </form>
 </section>
+<section id="panel-melodies" aria-labelledby="melodies-title" hidden>
+<div class="section-heading"><div class="eyebrow">Парадидлы</div><h2 id="melodies-title">Обыгрывание мелодий</h2><p>Прочитай мелодию сверху и сыграй её акцентами на непрерывных шестнадцатых. Ниже нот — аппликатура каждого парадидла.</p></div>
+<form id="melody-generator" class="controls melody-controls">
+<div class="field"><label for="melody-bars">Количество тактов</label><input id="melody-bars" type="number" min="1" max="64" step="1" value="8" required inputmode="numeric"><small>От 1 до 64 · размер 4/4</small></div>
+<fieldset class="palette"><legend>Фигуры мелодии</legend><div id="melody-patterns" class="melody-patterns"></div></fieldset>
+<div class="field"><label for="melody-hand">Начать рукой</label><select id="melody-hand"><option value="R">R — правая</option><option value="L">L — левая</option></select><small>После RR — L, после LL — R. Руки продолжаются между тактами и на репризе.</small></div>
+<div class="generate-area"><button class="primary" type="submit">Сгенерировать мелодию ↗</button><small>Без пауз. Каждая фигура целиком помещается в такт.</small></div><p class="error" id="melody-error" role="alert" hidden></p>
+</form>
+</section>
 <section id="panel-sounds" aria-labelledby="sounds-title" hidden>
-<div class="section-heading"><div class="eyebrow">Твоя палитра</div><h2 id="sounds-title">Звуки</h2><p>Выбери тембры и сравни их на коротком ритме. Метроном и малый барабан используются также в этюдах и акцентах.</p></div>
+<div class="section-heading"><div class="eyebrow">Твоя палитра</div><h2 id="sounds-title">Звуки</h2><p>Выбери тембры и сравни их на коротком ритме. Эти звуки используются в этюдах, акцентах и обыгрывании мелодий.</p></div>
 <div class="sound-demo sound-panel">
 <div class="sound-panel-heading"><div><h3>Послушать вместе</h3><p>Четыре такта 4/4: грув, акценты и переход по томам.</p></div><div class="tempo-control"><label for="demo-tempo">Темп</label><input id="demo-tempo" type="number" min="40" max="240" step="1" value="100" required inputmode="numeric"><span>BPM</span></div></div>
 <div class="demo-transport"><button type="button" data-demo="metronome">▶ Метроном</button><button type="button" data-demo="kit">▶ Установка</button><button class="play-button" type="button" data-demo="together">▶ Вместе</button><button id="demo-stop" type="button" disabled>■ Стоп</button><label class="volume-control" for="demo-volume">Громкость<input id="demo-volume" type="range" min="0" max="100" value="60"></label></div>
 <div class="demo-progress"><div class="demo-beats" aria-hidden="true"><span></span><span></span><span></span><span></span></div><span id="demo-position"></span></div><p id="demo-status" class="player-status" role="status">Нажми на вариант демо или послушай отдельный инструмент ниже.</p>
 </div>
 <div class="sound-panel"><div class="sound-panel-heading"><div><h3>Метроном</h3><p>Первая доля звучит выше, чтобы было легче слышать начало такта.</p></div></div><fieldset id="metronome-sounds" class="sound-options" aria-label="Тембр метронома"></fieldset></div>
-<div class="sound-panel"><div class="sound-panel-heading"><div><h3>Барабанная установка</h3><p>У малого барабана для сравнения прозвучат тихий удар и акцент.</p></div></div><div class="acoustic-preset"><div><strong>Акустическая установка</strong><p>Записи настоящих барабанов. Удары чередуются, тихие ноты и акценты малого записаны отдельно. Весь набор — 3,4 МБ.</p></div><button id="use-acoustic" type="button" class="play-button">Выбрать акустическую установку</button></div><p id="acoustic-status" class="sound-note" role="status">Живые записи загружаются при первом прослушивании и сохраняются офлайн.</p><div id="kit-sounds" class="kit-sounds"></div><p class="sound-note">Бочка, хай-хэт, томы и тарелки звучат в демо установки. «Живая запись» — акустические барабаны, остальные варианты — синтезированные тембры.</p><p class="sound-note sound-credits">Записи: <a href="https://github.com/endolith/Salamander-Drumkit" target="_blank" rel="noopener">Salamander Drumkit — Alexander Holm</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Для сайта удалены начальная тишина, сокращены хвосты и настроена громкость. <a href="./assets/audio/salamander-v1/README.md" target="_blank" rel="noopener">Об источнике</a>.</p></div>
+<div class="sound-panel"><div class="sound-panel-heading"><div><h3>Барабанная установка</h3><p>У малого барабана для сравнения прозвучат тихий удар и акцент.</p></div></div><div class="acoustic-preset"><div><strong>Акустическая установка</strong><p>Записи настоящих барабанов. Удары чередуются, тихие ноты и акценты малого записаны отдельно. Весь набор — 3,4 МБ.</p></div><button id="use-acoustic" type="button" class="play-button">Выбрать акустическую установку</button></div><p id="acoustic-status" class="sound-note" role="status">Живые записи загружаются при первом прослушивании и сохраняются офлайн.</p><div id="kit-sounds" class="kit-sounds"></div><p class="sound-note">Бочка, хай-хэт, томы и тарелки звучат в обыгрывании мелодий и демо установки. «Живая запись» — акустические барабаны, остальные варианты — синтезированные тембры.</p><p class="sound-note sound-credits">Записи: <a href="https://github.com/endolith/Salamander-Drumkit" target="_blank" rel="noopener">Salamander Drumkit — Alexander Holm</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Для сайта удалены начальная тишина, сокращены хвосты и настроена громкость. <a href="./assets/audio/salamander-v1/README.md" target="_blank" rel="noopener">Об источнике</a>.</p></div>
 <div class="sound-settings-footer"><p class="status" id="sound-settings-status" role="status">Выбор сохраняется на этом устройстве.</p><button id="reset-sounds" type="button">Вернуть исходные звуки</button></div>
 </section>
 <section id="panel-paradiddles" aria-labelledby="rudiment-title" hidden>
@@ -108,6 +119,7 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 </div>
 </section>
 <section id="exercise" aria-label="Результат упражнения">
+<div id="melody-voice-control" class="melody-voice" hidden><label for="melody-voice">Озвучивание</label><select id="melody-voice" aria-describedby="melody-voice-help"></select><p id="melody-voice-help" class="sound-note"></p><p class="sound-note">Тембры инструментов выбираются в разделе «Звуки».</p></div>
 <div class="player" role="group" aria-label="Воспроизведение упражнения">
 <div class="transport"><button class="play-button" id="play" type="button">▶ Слушать</button><button id="stop" type="button" disabled>■ Стоп</button></div>
 <div class="tempo-control"><label for="tempo">Темп</label><input id="tempo" type="number" min="40" max="240" step="1" value="80" required inputmode="numeric"><span>BPM<br>четверть / мин</span></div>
@@ -119,6 +131,7 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 <div class="sheet"><div class="sheet-header"><div><div class="eyebrow" id="score-eyebrow">Практика чтения</div><h2 class="sheet-title" id="score-title">Ритмический этюд</h2><div class="meta" id="meta"></div></div><span class="badge" id="meter">4/4</span></div><div class="score"><div id="score-lines"></div></div><div class="pagination" id="pagination" hidden><button id="previous-page" type="button">← Назад</button><span id="page-label"></span><button id="next-page" type="button">Далее →</button></div><div class="sheet-footer" id="score-footer"><span>Один такт = четыре четверти</span><span>Паузы с точкой объединяются автоматически</span><span>Скобки с 3, 5 и 6 — группы на одну долю</span></div></div>
 <div class="actions"><button id="save-pdf" type="button">Скачать PDF</button><button id="save" type="button">Скачать ноты · SVG</button></div>
 <p class="status" id="status" role="status"></p>
+<details class="help" id="melody-help" hidden><summary>Как обыгрывать мелодию</summary><p>Четверть → парадидл RLRR; четверть с точкой → парадидл-дидл RLRRLL; половинная → тройной парадидл RLRLRLRR; восьмая + четверть → двойной парадидл RLRLRR. С левой руки аппликатуры зеркальные.</p><p>У первых трёх фигур акцент на первом ударе. У двойного парадидла — на первом и третьем: они образуют восьмую и четверть в мелодии. Все удары в нижней строке — ровные шестнадцатые. П, П-д, 3П и 2П под скобками обозначают эти четыре фигуры.</p><p>Тихие удары продолжаются между акцентами. После двух правых следующий парадидл начинается с левой, после двух левых — с правой. Генератор подбирает фигуры так, чтобы получились целые такты и аппликатура продолжалась на репризе. Только из фигур по шесть ударов не собрать 4/4: оставь включённой четверть или половинную.</p><p>Озвучивание можно менять без новой генерации. Упражнение, аппликатура и выбранный режим сохраняются в .ritmika; PDF и SVG содержат обе нотные строки.</p></details>
 <details class="help" id="etude-help"><summary>Как устроен этюд</summary>
 <p>Размер всегда 4/4. Для исходного ритма можно выбрать восьмые, триоли, шестнадцатые, квинтоли и секстоли. Ноты и паузы включаются отдельно. Общий ползунок задаёт вероятность паузы в каждой позиции, в том числе внутри групп. При 0% пауз нет. По умолчанию включены ноты и паузы только восьмых и шестнадцатых.</p>
 <p>Триоль, квинтоль и секстоль занимают одну четвертную долю и состоят из 3, 5 и 6 равных позиций. Каждая позиция может быть нотой или паузой — вся группа не обязана состоять из ударов. Полностью звучащая группа тоже может случайно получиться. Если выключить паузы для длительности, останутся только ноты.</p>
@@ -136,6 +149,7 @@ button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(-
 </div>
 <dialog class="menu-dialog" id="menu-dialog" aria-labelledby="menu-title"><div class="menu-heading"><h2 id="menu-title">Разделы</h2><button id="menu-close" type="button" aria-label="Закрыть меню">×</button></div><div id="mobile-navigation"></div></dialog>
 <script src="./acoustic.js"></script>
+<script src="./melodies.js"></script>
 <script>
 'use strict';
 // 120 ticks per quarter represent dotted notes and 3-, 5-, 6-tuplets exactly.
@@ -210,7 +224,7 @@ function addEtudeAccents(etude,chance=0,random=Math.random) {
     ...event,accented:!event.rest && chance>0 && random()<chance
   })))};
 }
-function usesAccentDynamics(etude) { return etude.mode==='accents'||etude.accentChance>0; }
+function usesAccentDynamics(etude) { return etude.mode==='melodies'||etude.mode==='accents'||etude.accentChance>0; }
 function makeAccentEtude(bars,beats,notes,maxAccents,random=Math.random) {
   if(!Number.isInteger(bars)||bars<1||bars>256)throw new RangeError('Количество тактов должно быть от 1 до 256.');
   if(!Number.isInteger(beats)||beats<1||beats>64)throw new RangeError('Долей в такте должно быть от 1 до 64.');
@@ -245,7 +259,7 @@ function accentMeasure(notes,barPositions) {
 function accentText(etude) {
   return etude.accentPositions.map(bar=>'['+bar.map(positions=>positions.join(etude.subdivision>9?',':'')).join('-')+']');
 }
-function exerciseTitle(etude) { return etude.mode==='accents'?'Акценты':'Ритмический этюд'; }
+function exerciseTitle(etude) { return etude.mode==='melodies'?'Обыгрывание мелодий':etude.mode==='accents'?'Акценты':'Ритмический этюд'; }
 function exerciseMeter(etude) { return `${etude.beats||4}/4`; }
 function eventBeams(event) { return event.beams??DURATIONS.find(d=>d.id===event.type).beams; }
 function stemTop(event) { return Math.min(36,70-eventBeams(event)*7); }
@@ -330,10 +344,10 @@ function restGlyph(x,type,customBeams) {
   }
   return out;
 }
-function drawMeasure(measure,width,leftPadding=0,rightPadding=0) {
+function drawMeasure(measure,width,leftPadding=0,rightPadding=0,positions) {
   const weight=measure.reduce((sum,e)=>sum+eventSpace(e),0);
   let cursor=15+leftPadding;
-  const xs=measure.map(e=>{const x=cursor;cursor+=eventSpace(e)*(width-26-leftPadding-rightPadding)/weight;return x;});
+  const xs=positions||measure.map(e=>{const x=cursor;cursor+=eventSpace(e)*(width-26-leftPadding-rightPadding)/weight;return x;});
   const beams=measure.map(eventBeams);
   const connected=(i,j)=>j>=0&&j<measure.length&&!measure[i].rest&&!measure[j].rest&&beams[i]>0&&beams[j]>0&&(measure[i].beat??Math.floor(measure[i].time/QUARTER_TICKS))===(measure[j].beat??Math.floor(measure[j].time/QUARTER_TICKS))&&measure[i].tuplet===measure[j].tuplet;
   let out='';
@@ -361,6 +375,7 @@ function repeatBarline(x,opening) {
   return `<g class="repeat-${opening?'start':'end'}"><path d="M${x} 35V85" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M${x+direction*5} 35V85" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="${x+direction*11}" cy="53" r="2.1"/><circle cx="${x+direction*11}" cy="67" r="2.1"/></g>`;
 }
 function layoutScore(etude,availableWidth,forcedColumns,firstBar=0,lastBar=etude.bars) {
+  if(etude.mode==='melodies')return melodyLayout(etude,availableWidth,forcedColumns,firstBar,lastBar);
   const widest=Math.max(...etude.measures.slice(firstBar,lastBar).map((measure,index)=>measureMinWidth(measure)+(firstBar+index===0?16:0)+(firstBar+index===etude.bars-1?16:0)));
   const columns=forcedColumns || (etude.bars>=4 && widest*4<=availableWidth ? 4 : 2);
   const width=Math.max(availableWidth,widest*columns);
@@ -381,14 +396,14 @@ function layoutScore(etude,availableWidth,forcedColumns,firstBar=0,lastBar=etude
 }
 function scoreSVG(etude,columns) {
   const layout=layoutScore(etude,1100,columns);
-  const width=layout.width+48,height=96+layout.rows.length*112;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="#242821" color="#242821"><title>${exerciseTitle(etude)}, ${etude.bars} тактов, ${exerciseMeter(etude)}</title><rect width="100%" height="100%" fill="#fffdf8"/><text x="24" y="35" font-family="Georgia,serif" font-size="25">${exerciseTitle(etude)} · ${exerciseMeter(etude)}</text><text x="24" y="60" font-family="sans-serif" font-size="12">Тактов: ${etude.bars}</text>${layout.rows.map((r,i)=>`<g transform="translate(24 ${78+i*112})">${r.content}</g>`).join('')}</svg>`;
+  const step=layout.rows[0].height+11,width=layout.width+48,height=96+layout.rows.length*step;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="#242821" color="#242821"><title>${exerciseTitle(etude)}, ${etude.bars} тактов, ${exerciseMeter(etude)}</title><rect width="100%" height="100%" fill="#fffdf8"/><text x="24" y="35" font-family="Georgia,serif" font-size="25">${exerciseTitle(etude)} · ${exerciseMeter(etude)}</text><text x="24" y="60" font-family="sans-serif" font-size="12">Тактов: ${etude.bars}</text>${layout.rows.map((r,i)=>`<g transform="translate(24 ${78+i*step})">${r.content}</g>`).join('')}</svg>`;
 }
 function scorePDFPages(etude) {
   const width=595.28,height=841.89,margin=36,top=88,bottom=height-48;
   const layout=layoutScore(etude,1100);
   const scale=(width-margin*2)/layout.width;
-  const rowHeight=101*scale,step=Math.max(64,rowHeight+14);
+  const rowHeight=layout.rows[0].height*scale,step=Math.max(64,rowHeight+14);
   const rowsPerPage=Math.max(1,Math.floor((bottom-top-rowHeight)/step)+1);
   const pageCount=Math.ceil(layout.rows.length/rowsPerPage);
   return Array.from({length:pageCount},(_,page)=>{
@@ -431,6 +446,7 @@ function makePDF(images) {
 }
 function makePlaybackPlan(etude,bpm,metronome=false) {
   if(!Number.isInteger(bpm)||bpm<40||bpm>240)throw new RangeError('Темп должен быть целым числом от 40 до 240.');
+  if(etude.mode==='melodies')return melodyPlaybackPlan(etude,bpm,metronome);
   const secondsPerTick=60/bpm/QUARTER_TICKS,beats=etude.beats||4;
   const sounds=[],positions=[];
   etude.measures.forEach((measure,bar)=>measure.forEach((event,index)=>{
@@ -559,6 +575,7 @@ class RhythmPlayer {
       const samples=buffers.drum.getChannelData(0),soft=this.context.createBuffer(1,samples.length,this.context.sampleRate);
       soft.getChannelData(0).set(samples.map(value=>value*.12));buffers.softDrum=soft;
     }
+    variants.softHat=(variants.hat||[buffers.hat]).map(buffer=>{const samples=buffer.getChannelData(0),soft=this.context.createBuffer(1,samples.length,buffer.sampleRate||this.context.sampleRate);soft.getChannelData(0).set(samples.map(x=>x*.45));return soft;});buffers.softHat=variants.softHat[0];
     for(const id of ['click','accent'])buffers[id]=makeSoundBuffer(this.context,id,selected.metronome);
     this.soundSettings=selected;this.buffers=buffers;this.variants=variants;
   }
@@ -592,7 +609,7 @@ class RhythmPlayer {
       if(when>now+0.15)break;
       // If the tab was suspended, stop instead of playing missed hits in a burst.
       if(when<now-0.04){this.stop('interrupted');return;}
-      if(sound.kind==='hat')for(const [open,voice] of this.openHats){
+      if(sound.kind==='hat'||sound.kind==='softHat')for(const [open,voice] of this.openHats){
         if(voice.when<=when&&!voice.closing){
           voice.gain.gain.cancelScheduledValues(when);voice.gain.gain.setValueAtTime(1,when);
           voice.gain.gain.linearRampToValueAtTime(0,when+.02);open.stop(when+.025);voice.closing=true;
@@ -638,11 +655,11 @@ function filePlayback(value) {
   return {bpm:value.bpm,metronome:value.metronome,volume:value.volume,sounds:normalizeSoundSettings(sounds)};
 }
 function serializeExerciseFile(exercise,playback) {
-  const kind=exercise.mode==='accents'?'accents':'etudes';
-  const data=kind==='accents'
+  const kind=exercise.mode==='melodies'?'melodies':exercise.mode==='accents'?'accents':'etudes';
+  const data=kind==='melodies'?{bars:exercise.bars,blocks:exercise.blocks,startingHand:exercise.startingHand,voice:exercise.voice}:kind==='accents'
     ? {bars:exercise.bars,beats:exercise.beats,subdivision:exercise.subdivision,maxAccents:exercise.maxAccents,accentPositions:exercise.accentPositions}
     : {bars:exercise.bars,accentChance:exercise.accentChance||0,measures:exercise.measures.map(bar=>bar.map(e=>[e.type,e.rest,Boolean(e.dotted),Boolean(e.accented)]))};
-  const text=JSON.stringify({format:'ritmika-exercise',version:1,kind,exercise:data,playback:filePlayback(playback)});
+  const text=JSON.stringify({format:'ritmika-exercise',version:kind==='melodies'?2:1,kind,exercise:data,playback:filePlayback(playback)});
   if(text.length>EXERCISE_FILE_LIMIT)throw new Error('Упражнение слишком большое для сохранения.');
   return text;
 }
@@ -651,13 +668,16 @@ function parseExerciseFile(text) {
   let data;
   try{data=JSON.parse(text.replace(/^\uFEFF/,''));}catch{throw new Error('Не удалось прочитать файл. Выбери упражнение, сохранённое в Ритмике.');}
   if(!data||data.format!=='ritmika-exercise')throw new Error('Это не файл упражнения Ритмики. PDF и SVG нельзя открыть для воспроизведения.');
-  if(data.version!==1)throw new Error('Эта версия файла пока не поддерживается. Обнови приложение и попробуй снова.');
+  if(!(data.version===1&&['etudes','accents'].includes(data.kind))&&!(data.version===2&&data.kind==='melodies'))throw new Error('Эта версия файла пока не поддерживается. Обнови приложение и попробуй снова.');
   const playback=filePlayback(data.playback),raw=data.exercise,kind=data.kind;
   const integer=(n,min,max)=>Number.isInteger(n)&&n>=min&&n<=max;
   const invalid=()=>{throw new Error('Файл повреждён: проверь исходное упражнение или сохрани его заново.');};
-  if(!raw||!['etudes','accents'].includes(kind)||!integer(raw.bars,1,kind==='accents'?256:64))invalid();
+  if(!raw||!['etudes','accents','melodies'].includes(kind)||!integer(raw.bars,1,kind==='accents'?256:64))invalid();
   let exercise;
-  if(kind==='accents'){
+  if(kind==='melodies'){
+    if(!Array.isArray(raw.blocks)||raw.blocks.length!==raw.bars||!['R','L'].includes(raw.startingHand)||!Object.hasOwn(MELODY_VOICES,raw.voice))invalid();
+    exercise=buildMelodyExercise(raw.blocks,raw.startingHand,raw.voice);
+  }else if(kind==='accents'){
     const {bars,beats,subdivision:notes,maxAccents}=raw;
     if(!integer(beats,1,64)||!integer(notes,1,64)||!integer(maxAccents,1,notes)||!Array.isArray(raw.accentPositions)||raw.accentPositions.length!==bars)invalid();
     // Validate the entire compact file before allocating expanded note events.
@@ -699,10 +719,10 @@ function parseExerciseFile(text) {
 // Browser interface. Rhythm, notation, audio scheduling and exports also run without a DOM.
 if(typeof document!=='undefined') {
   const $=id=>document.getElementById(id);
-  const form=$('generator'),accentForm=$('accent-generator'),lines=$('score-lines');
-  const states={etudes:{etude:null,page:0},accents:{etude:null,page:0}};
+  const form=$('generator'),accentForm=$('accent-generator'),melodyForm=$('melody-generator'),lines=$('score-lines');
+  const states={etudes:{etude:null,page:0},accents:{etude:null,page:0},melodies:{etude:null,page:0}};
   let mode='etudes',section='',etude=null,layout=null,printing=false,importVersion=0;
-  let audio=null,player=null,acousticLibrary=null,startVersion=0,playbackTarget='exercise',activeGlyph=null,activeMeasure=null,lastPosition=null;
+  let audio=null,player=null,acousticLibrary=null,startVersion=0,playbackTarget='exercise',activeStroke=null,activeHand=null,activeGlyph=null,activeMeasure=null,lastPosition=null;
   let soundSettings;
   try{soundSettings=normalizeSoundSettings(JSON.parse(localStorage.getItem('rhythm-dev-sounds-v1')));}catch{soundSettings=normalizeSoundSettings();}
   const restPercent=()=>Math.min(99,Number($('rest-chance').value));
@@ -730,6 +750,7 @@ if(typeof document!=='undefined') {
     $('play').disabled=busy||!etude;$('stop').disabled=!busy;$('tempo').disabled=busy;$('metronome').disabled=busy;
   }
   function clearHighlight() {
+    activeStroke?.classList.remove('active-stroke');activeHand?.classList.remove('active-stroke');activeStroke=null;activeHand=null;
     activeGlyph?.classList.remove('active-event');activeMeasure?.classList.remove('active-measure');
     activeGlyph=null;activeMeasure=null;lastPosition=null;$('position').textContent='';
   }
@@ -740,10 +761,13 @@ if(typeof document!=='undefined') {
     if(!position)return;
     const page=Math.floor(position.bar/barsPerPage());
     if(states[mode].page!==page){states[mode].page=page;renderScore();}
-    if(activeGlyph?.isConnected&&lastPosition?.bar===position.bar&&lastPosition?.index===position.index&&lastPosition?.cycle===position.cycle)return;
+    if(activeGlyph?.isConnected&&lastPosition?.bar===position.bar&&lastPosition?.index===position.index&&lastPosition?.stroke===position.stroke&&lastPosition?.cycle===position.cycle)return;
+    activeStroke?.classList.remove('active-stroke');activeHand?.classList.remove('active-stroke');activeStroke=null;activeHand=null;
     activeGlyph?.classList.remove('active-event');activeMeasure?.classList.remove('active-measure');
     activeMeasure=lines.querySelector(`[data-measure="${position.bar}"]`);
     activeGlyph=activeMeasure?.querySelector(`[data-event="${position.index}"]`);
+    activeStroke=activeMeasure?.querySelector(`[data-stroke="${position.stroke}"]`);activeHand=activeMeasure?.querySelector(`[data-hand="${position.stroke}"]`);
+    activeStroke?.classList.add('active-stroke');activeHand?.classList.add('active-stroke');
     activeMeasure?.classList.add('active-measure');activeGlyph?.classList.add('active-event');
     lastPosition=position;$('position').textContent=`Круг ${position.cycle} · такт ${position.bar+1} из ${etude.bars}`;
   }
@@ -816,7 +840,8 @@ if(typeof document!=='undefined') {
       const wrapper=document.createElement('div');wrapper.className='score-line'+(dense?' dense':'');wrapper.tabIndex=0;
       if(dense)wrapper.style.setProperty('--dense-width',Math.ceil(row.width*0.85)+'px');
       wrapper.setAttribute('aria-label',row.end-row.start===1?`Такт ${row.start+1}`:`Такты ${row.start+1}–${row.end}`);
-      wrapper.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${row.width} ${row.height}" fill="currentColor" role="img" aria-labelledby="row-${row.start}"><title id="row-${row.start}">${description}</title>${row.content}</svg>`;
+      const sticking=mode==='melodies'?' Шестнадцатые: '+etude.strokes.slice(row.start,row.end).map((bar,i)=>`такт ${row.start+i+1}, ${bar.map(e=>(e.hand==='R'?'правая':'левая')+(e.accented?' с акцентом':'')).join(', ')}`).join('. '):'';
+      wrapper.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${row.width} ${row.height}" fill="currentColor" role="img" aria-labelledby="row-${row.start}"><title id="row-${row.start}">${description}${sticking}</title>${row.content}</svg>`;
       lines.append(wrapper);
     });
     $('meta').textContent=`Тактов: ${etude.bars} · ${layout.columns} ${layout.columns===1?'такт':'такта'} в строке`;
@@ -829,9 +854,12 @@ if(typeof document!=='undefined') {
   function showExercise() {
     etude=states[mode].etude;if(!etude)return;
     $('file-status').hidden=true;
+    $('melody-voice-control').hidden=mode!=='melodies';$('melody-help').hidden=mode!=='melodies';
+    if(mode==='melodies'){$('melody-voice').value=etude.voice;$('melody-voice-help').textContent=MELODY_VOICES[etude.voice].help;}
     $('score-title').textContent=exerciseTitle(etude);$('meter').textContent=exerciseMeter(etude);
     $('score-eyebrow').textContent=mode==='accents'?'Практика акцентов':'Практика чтения';
     $('score-footer').innerHTML=mode==='accents'?`<span>&gt; — акцент</span><span>Остальные ноты — тише</span><span>${etude.maxAccents===1?'Один акцент в доле':`Акцентов в доле: 1–${etude.maxAccents}`}</span>`:'<span>Один такт = четыре четверти</span><span>Паузы с точкой объединяются автоматически</span><span>Скобки с 3, 5 и 6 — группы на одну долю</span>';
+    if(mode==='melodies'){$('score-eyebrow').textContent='Мелодия акцентов';$('score-footer').innerHTML='<span>Сверху — мелодия акцентов</span><span>Снизу — шестнадцатые и руки</span><span>R — правая · L — левая</span>';}
     $('score-footer').innerHTML+='<span>Реприза — повтор с начала</span>';
     if(mode==='etudes'&&etude.accentChance>0)$('score-footer').innerHTML+='<span>&gt; — акцент, играй громче</span>';
     $('etude-help').hidden=mode!=='etudes';$('accent-help').hidden=mode!=='accents';$('accent-sequence').hidden=mode!=='accents';
@@ -841,7 +869,7 @@ if(typeof document!=='undefined') {
     }
     renderScore();playbackControls(false);
     let hits=0,rests=0,accents=0;for(const measure of etude.measures)for(const event of measure){event.rest?rests++:hits++;if(event.accented)accents++;}
-    $('status').textContent=mode==='accents'?`Акценты готовы. Нот: ${hits}, акцентов: ${accents}.`:`Этюд готов. Нот: ${hits}, пауз: ${rests}${etude.accentChance>0?`, акцентов: ${accents}`:''}.`;
+    $('status').textContent=mode==='melodies'?`Мелодия готова. Тактов: ${etude.bars}, шестнадцатых: ${etude.bars*16}, акцентов: ${hits}.`:mode==='accents'?`Акценты готовы. Нот: ${hits}, акцентов: ${accents}.`:`Этюд готов. Нот: ${hits}, пауз: ${rests}${etude.accentChance>0?`, акцентов: ${accents}`:''}.`;
     $('player-status').textContent=usesAccentDynamics(etude)?'Слушать: акценты громче, остальные ноты тише.':'Упражнение готово к прослушиванию.';
   }
   function scrollToExercise(event) {
@@ -867,6 +895,16 @@ if(typeof document!=='undefined') {
     try{states.accents={etude:makeAccentEtude(Number($('accent-bars').value),Number($('accent-beats').value),Number($('accent-notes').value),Number($('accent-max').value)),page:0};}catch(error){$('accent-error').textContent=error.message;$('accent-error').hidden=false;return;}
     $('accent-error').hidden=true;stopPlayback();showExercise();scrollToExercise(event);
   });
+  $('melody-patterns').innerHTML=MELODY_PATTERNS.map(p=>`<div class="melody-pattern"><label class="choice"><input type="checkbox" name="melody-pattern" value="${p.id}" checked>${p.label}</label><svg viewBox="0 0 130 90" aria-hidden="true" fill="currentColor">${drawMeasure(p.notes.map(([type,dotted,length],i)=>({type,dotted,ticks:length*30,time:i*60,rest:false,tuplet:null})),130)}</svg><small>${p.name} · ${p.hands}</small></div>`).join('');
+  $('melody-voice').innerHTML=Object.entries(MELODY_VOICES).map(([id,v])=>`<option value="${id}">${v.label}</option>`).join('');
+  $('melody-voice').addEventListener('change',()=>{stopPlayback();if(states.melodies.etude)states.melodies.etude.voice=$('melody-voice').value;$('melody-voice-help').textContent=MELODY_VOICES[$('melody-voice').value].help;});
+  melodyForm.addEventListener('submit',event=>{
+    event.preventDefault();importVersion++;if(!melodyForm.reportValidity())return;
+    try{states.melodies={etude:makeMelodyExercise(Number($('melody-bars').value),Array.from(melodyForm.querySelectorAll('[name="melody-pattern"]:checked'),e=>e.value),$('melody-hand').value,$('melody-voice').value),page:0};}
+    catch(error){$('melody-error').textContent=error.message;$('melody-error').hidden=false;return;}
+    $('melody-error').hidden=true;stopPlayback();showExercise();scrollToExercise(event);
+  });
+  melodyForm.addEventListener('change',()=>{$('melody-error').hidden=true;});
   form.addEventListener('change',()=>{$('error').hidden=true;});accentForm.addEventListener('change',()=>{$('accent-error').hidden=true;});
   $('metronome-sounds').innerHTML=METRONOME_SOUNDS.map(([id,label])=>`<label class="sound-option"><input type="radio" name="metronome-sound" value="${id}">${label}</label>`).join('');
   $('kit-sounds').innerHTML=Object.entries(KIT_SOUNDS).map(([id,item])=>`<div class="kit-sound"><label for="sound-${id}">${item.name}</label><div class="kit-sound-controls"><select id="sound-${id}" data-sound="${id}">${item.options.map(([value,label])=>`<option value="${value}">${label}</option>`).join('')}</select><button type="button" data-preview="${id}" aria-label="Послушать: ${item.name}" aria-pressed="false">▶</button></div></div>`).join('');
@@ -933,6 +971,7 @@ if(typeof document!=='undefined') {
   });
   function sectionFromHash() {
     const route=location.hash.slice(1);
+    if(route==='paradiddles/melodies')return route;
     if(['accents','etudes','sounds'].includes(route))return route;
     if(route==='paradiddles')return 'paradiddles/single';
     const [group,type,...extra]=route.split('/');
@@ -940,7 +979,8 @@ if(typeof document!=='undefined') {
   }
   function activateSection(next,scroll=false) {
     importVersion++;stopPlayback();section=next;
-    const isRudiment=next.startsWith('paradiddles/'),isSounds=next==='sounds';
+    const isMelody=next==='paradiddles/melodies',isRudiment=next.startsWith('paradiddles/')&&!isMelody,isSounds=next==='sounds';
+    $('panel-melodies').hidden=!isMelody;if(isMelody)$('paradiddles-nav').open=true;
     $('panel-etudes').hidden=next!=='etudes';$('panel-accents').hidden=next!=='accents';
     $('exercise-files').hidden=isRudiment||isSounds;
     $('exercise').hidden=isRudiment||isSounds;$('panel-paradiddles').hidden=!isRudiment;$('panel-sounds').hidden=!isSounds;
@@ -956,8 +996,8 @@ if(typeof document!=='undefined') {
       document.title=item.title+' · Ритмика — разработка';
     }else if(isSounds){document.title='Звуки · Ритмика — разработка';
     }else{
-      mode=next;document.title=(mode==='etudes'?'Этюды':'Акценты')+' · Ритмика — разработка';
-      if(!states[mode].etude)(mode==='etudes'?form:accentForm).requestSubmit();else showExercise();
+      mode=isMelody?'melodies':next;document.title=(mode==='melodies'?'Обыгрывание мелодий':mode==='etudes'?'Этюды':'Акценты')+' · Ритмика — разработка';
+      if(!states[mode].etude)(mode==='melodies'?melodyForm:mode==='etudes'?form:accentForm).requestSubmit();else showExercise();
     }
     if(menu.open)menu.close();
     if(scroll)window.scrollTo({top:0,behavior:'instant'});
@@ -988,7 +1028,7 @@ if(typeof document!=='undefined') {
       return {bytes:new Uint8Array(await blob.arrayBuffer()),width:canvas.width,height:canvas.height};
     }finally{URL.revokeObjectURL(url);canvas.width=0;canvas.height=0;}
   }
-  const filename=(exercise,extension)=>`${exercise.mode==='accents'?'drum-accents':'rhythm-etude'}-${exercise.beats||4}-4.${extension}`;
+  const filename=(exercise,extension)=>`${exercise.mode==='melodies'?'paradiddle-melody':exercise.mode==='accents'?'drum-accents':'rhythm-etude'}-${exercise.beats||4}-4.${extension}`;
   function fileStatus(message) { $('file-status').hidden=false;$('file-status').textContent=message; }
   $('save-exercise').addEventListener('click',()=>{
     if(!etude||!$('tempo').reportValidity())return;
@@ -1011,13 +1051,15 @@ if(typeof document!=='undefined') {
       states[imported.kind]={etude:imported.exercise,page:0};
       $('tempo').value=imported.playback.bpm;$('metronome').checked=imported.playback.metronome;$('volume').value=imported.playback.volume;
       soundSettings=imported.playback.sounds;showSoundSettings();saveSoundSettings();
-      if(imported.kind==='accents'){
+      if(imported.kind==='melodies'){$('melody-bars').value=imported.exercise.bars;$('melody-hand').value=imported.exercise.startingHand;$('melody-voice').value=imported.exercise.voice;
+      }else if(imported.kind==='accents'){
         $('accent-bars').value=imported.exercise.bars;$('accent-beats').value=imported.exercise.beats;
         $('accent-notes').value=imported.exercise.subdivision;syncAccentLimit();$('accent-max').value=imported.exercise.maxAccents;
       }else{$('bars').value=imported.exercise.bars;}
-      $('error').hidden=true;$('accent-error').hidden=true;
-      if(location.hash!=='#'+imported.kind)history.pushState(null,'','#'+imported.kind);
-      activateSection(imported.kind);
+      $('error').hidden=true;$('accent-error').hidden=true;$('melody-error').hidden=true;
+      const route=imported.kind==='melodies'?'paradiddles/melodies':imported.kind;
+      if(location.hash!=='#'+route)history.pushState(null,'','#'+route);
+      activateSection(route);
       fileStatus('Открыт файл «'+file.name+'». Сохранены все такты, темп и звуки.');
       $('player-status').textContent='Упражнение загружено из файла. Нажми «Слушать», чтобы начать.';
       requestAnimationFrame(()=>{$('play').focus({preventScroll:true});$('exercise').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
